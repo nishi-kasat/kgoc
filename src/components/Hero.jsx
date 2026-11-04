@@ -8,15 +8,15 @@ export const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative pt-24 pb-10 md:pt-32 md:pb-14 lg:pt-36 lg:pb-16 overflow-hidden bg-white"
+      className="relative pt-24 pb-12 md:pt-32 md:pb-16 lg:pt-36 lg:pb-20 overflow-hidden bg-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Column: Heading, Subtitle & Action Buttons */}
           <div className="lg:col-span-6 flex flex-col items-start z-10">
             
-            {/* Tagline with horizontal line matching mockup */}
+            {/* Tagline with horizontal line */}
             <div className="flex items-center gap-3 w-full mb-4">
               <span className="text-xs sm:text-sm font-extrabold tracking-widest text-[#880650] uppercase whitespace-nowrap">
                 Kasat Group of Companies
@@ -24,23 +24,23 @@ export const Hero = () => {
               <div className="h-[1.5px] bg-[#D52A91]/60 flex-grow max-w-xs" />
             </div>
 
-            {/* Main Heading matching mockup */}
-            <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] font-extrabold text-[#6F0043] tracking-tight leading-[1.18] mb-5">
+            {/* Main Heading */}
+            <h1 className="text-3xl sm:text-4xl md:text-[2.85rem] font-extrabold text-[#6F0043] tracking-tight leading-[1.18] mb-6">
               A Diversified Education Group<br />
               for India & Global Opportunities
             </h1>
 
-            {/* Supporting Text matching mockup */}
-            <p className="text-sm sm:text-base text-[#626273] font-normal leading-relaxed mb-8 max-w-xl">
+            {/* Supporting Text - increased font size for high readability */}
+            <p className="text-base sm:text-lg md:text-xl text-[#4A4A5A] font-normal leading-relaxed mb-8 max-w-xl">
               Empowering students through quality guidance, admissions and future-ready education solutions in India and abroad.
             </p>
 
-            {/* CTA Buttons matching mockup */}
+            {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4">
               {/* Explore Our Businesses Button */}
               <a
                 href="#businesses"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-sm group"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-base font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-sm group"
               >
                 <span>Explore Our Businesses</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -50,7 +50,7 @@ export const Hero = () => {
               <button
                 type="button"
                 onClick={() => setVideoModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-semibold text-[#880650] bg-white hover:bg-[#FBEAF4]/60 border border-[#880650]/40 transition-all focus:outline-none focus:ring-2 focus:ring-[#880650]/30"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full text-base font-semibold text-[#880650] bg-white hover:bg-[#FBEAF4]/60 border border-[#880650]/40 transition-all focus:outline-none focus:ring-2 focus:ring-[#880650]/30"
               >
                 <div className="w-6 h-6 rounded-full border border-[#880650] flex items-center justify-center">
                   <Play className="w-3 h-3 fill-[#880650] text-[#880650] ml-0.5" />
@@ -94,12 +94,12 @@ export const Hero = () => {
                 <Compass className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-[#202033]">The Kasat Group Story</h3>
+                <h3 className="text-xl font-bold text-[#202033]">The Kasat Group Story</h3>
                 <p className="text-xs text-[#626273]">Building Opportunities Through Education</p>
               </div>
             </div>
 
-            <div className="rounded-2xl bg-[#FFF9FC] p-5 border border-[#F1D3E5] text-sm text-[#626273] space-y-3 leading-relaxed mb-6">
+            <div className="rounded-2xl bg-[#FFF9FC] p-5 border border-[#F1D3E5] text-base text-[#4A4A5A] space-y-3 leading-relaxed mb-6">
               <p>
                 <strong>Kasat Group of Companies (KGoC)</strong> was founded by <strong>Er. Nandkishor Kasat</strong> with a single mission: to empower students across Maharashtra and India with accessible, credible, and ethical academic pathways.
               </p>
@@ -114,7 +114,7 @@ export const Hero = () => {
             <div className="flex justify-end">
               <button
                 onClick={() => setVideoModalOpen(false)}
-                className="px-6 py-2.5 rounded-full text-xs font-semibold text-white bg-[#880650] hover:bg-[#68003C]"
+                className="px-6 py-2.5 rounded-full text-sm font-semibold text-white bg-[#880650] hover:bg-[#68003C]"
               >
                 Close Story
               </button>
