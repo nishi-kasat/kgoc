@@ -1,8 +1,8 @@
 # Kasat Group of Companies (KGoC) - Corporate Website
 
 The official corporate parent website for **Kasat Group of Companies (KGoC)**, establishing KGoC as the parent organization for:
-1. **Emerge India & Overseas** (`https://emergeio.vercel.app/`)
-2. **Kasat Virtual College of Education (KVCE)** (`https://kvce.vercel.app/`)
+1. **Kasat's Emerge India & Overseas** (`https://emergeio.vercel.app/`)
+2. **Kasat Virtual College of Education** (`https://kvce.vercel.app/`)
 
 ---
 
@@ -26,8 +26,8 @@ Decorative curved lines and horizontal stripes throughout the UI are directly in
 | Asset Filename | Purpose & Usage Location |
 |---|---|
 | `kgoc logo.jpg` | Main KGoC corporate logo in Header and Footer |
-| `emerge logo.jpg` | Emerge India & Overseas subsidiary card logo |
-| `kvce logo.jpg` | Kasat Virtual College of Education (KVCE) subsidiary card logo |
+| `emerge logo.jpg` | Kasat's Emerge India & Overseas subsidiary card logo |
+| `kvce logo.jpg` | Kasat Virtual College of Education subsidiary card logo |
 | `Nandkishor Kasat.jpg` | Er. Nandkishor Kasat in About and Leadership sections |
 | `whatsapp qr.png` | Clickable WhatsApp QR Code in Contact Us section |
 

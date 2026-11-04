@@ -98,7 +98,7 @@ export const Leadership = () => {
                   As the driving force behind KGoC, Er. Nandkishor Kasat has guided the organization to focus on expanding access to higher learning across Maharashtra, India, and internationally.
                 </p>
                 <p>
-                  By fostering both consultancy through Emerge India & Overseas and flexible online education through Kasat Virtual College of Education, the group serves a broad spectrum of ambitious students and professionals.
+                  By fostering both consultancy through Kasat's Emerge India & Overseas and flexible online education through Kasat Virtual College of Education, the group serves a broad spectrum of ambitious students and professionals.
                 </p>
               </div>
 

@@ -45,7 +45,7 @@ export const Contact = () => {
                 </h3>
 
                 <p className="text-base sm:text-lg text-[#3E3E4E] leading-relaxed mb-8">
-                  Whether you are seeking admission counseling for India or abroad via Emerge India & Overseas, or exploring flexible university degree programs through Kasat Virtual College of Education, our helpline is ready to assist you.
+                  Whether you are seeking admission counseling for India or abroad via Kasat's Emerge India & Overseas, or exploring flexible university degree programs through Kasat Virtual College of Education, our helpline is ready to assist you.
                 </p>
 
                 {/* Direct Phone Number Card */}

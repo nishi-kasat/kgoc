@@ -80,7 +80,7 @@ export const Footer = () => {
                   className="group block p-2.5 rounded-xl bg-[#FFF9FC] hover:bg-[#FBEAF4] border border-[#F1D3E5] transition-all"
                 >
                   <span className="font-semibold text-[#202033] group-hover:text-[#880650] flex items-center justify-between">
-                    <span>Emerge India & Overseas</span>
+                    <span>Kasat's Emerge India & Overseas</span>
                     <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100" />
                   </span>
                   <span className="text-[11px] text-[#626273] block mt-0.5">
@@ -97,7 +97,7 @@ export const Footer = () => {
                   className="group block p-2.5 rounded-xl bg-[#FFF9FC] hover:bg-[#FBEAF4] border border-[#F1D3E5] transition-all"
                 >
                   <span className="font-semibold text-[#202033] group-hover:text-[#880650] flex items-center justify-between">
-                    <span>Kasat Virtual College</span>
+                    <span>Kasat Virtual College of Education</span>
                     <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100" />
                   </span>
                   <span className="text-[11px] text-[#626273] block mt-0.5">

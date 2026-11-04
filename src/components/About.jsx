@@ -54,7 +54,7 @@ export const About = () => {
             </p>
 
             <p className="text-base sm:text-lg text-[#333344] leading-relaxed font-normal">
-              Under his visionary leadership, the group operates two dedicated verticals: <strong>Emerge India & Overseas</strong> for university admissions and career counseling, and <strong>Kasat Virtual College of Education</strong> for flexible online degrees.
+              Under his visionary leadership, the group operates two dedicated verticals: <strong>Kasat's Emerge India & Overseas</strong> for university admissions and career counseling, and <strong>Kasat Virtual College of Education</strong> for flexible online degrees.
             </p>
 
           </div>

@@ -104,10 +104,10 @@ export const Hero = () => {
                 <strong>Kasat Group of Companies (KGoC)</strong> was founded by <strong>Er. Nandkishor Kasat</strong> with a single mission: to empower students across Maharashtra and India with accessible, credible, and ethical academic pathways.
               </p>
               <p>
-                Through <strong>Emerge India & Overseas</strong>, we provide specialized career counseling and admissions assistance for renowned colleges in India and abroad.
+                Through <strong>Kasat's Emerge India & Overseas</strong>, we provide specialized career counseling and admissions assistance for renowned colleges in India and abroad.
               </p>
               <p>
-                Through <strong>Kasat Virtual College of Education (KVCE)</strong>, we offer flexible, recognized degree and diploma programs for modern distance learners.
+                Through <strong>Kasat Virtual College of Education</strong>, we offer flexible, recognized degree and diploma programs for modern distance learners.
               </p>
             </div>
 

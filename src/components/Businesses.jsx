@@ -21,7 +21,7 @@ export const Businesses = () => {
         {/* Two-Column Horizontal Business Cards Layout with identical structural alignment */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
           
-          {/* Card 1: Emerge India & Overseas */}
+          {/* Card 1: Kasat's Emerge India & Overseas */}
           <div className="relative bg-white rounded-3xl border border-[#D52A91]/50 p-6 sm:p-8 shadow-xs hover:shadow-card transition-all flex flex-col justify-between overflow-hidden">
             
             {/* Top Area: Logo | Divider | Description (Fixed identical height for perfect cross-card alignment) */}

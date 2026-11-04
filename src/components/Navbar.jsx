@@ -17,8 +17,8 @@ export const Navbar = () => {
       id: 'businesses', 
       hasDropdown: true,
       items: [
-        { label: 'Emerge India & Overseas', href: 'https://emergeio.vercel.app/', isExternal: true },
-        { label: 'Kasat Virtual College (KVCE)', href: 'https://kvce.vercel.app/', isExternal: true },
+        { label: "Kasat's Emerge India & Overseas", href: 'https://emergeio.vercel.app/', isExternal: true },
+        { label: 'Kasat Virtual College of Education', href: 'https://kvce.vercel.app/', isExternal: true },
       ]
     },
     { name: 'Contact', href: '#contact', id: 'contact' },
