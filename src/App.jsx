@@ -4,7 +4,6 @@ import { Hero } from './components/Hero';
 import { Businesses } from './components/Businesses';
 import { StatsBanner } from './components/StatsBanner';
 import { About } from './components/About';
-import { Leadership } from './components/Leadership';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
@@ -15,26 +14,23 @@ function App() {
       <Navbar />
 
       <main>
-        {/* 1. Hero Section matching mockup */}
+        {/* 1. Hero Section with user-specified sunset graduate image */}
         <Hero />
 
-        {/* 2. Our Businesses Section matching mockup */}
+        {/* 2. Our Businesses Section */}
         <Businesses />
 
-        {/* 3. Deep Magenta Stats Ribbon Bar matching mockup */}
+        {/* 3. Deep Magenta Stats Ribbon Bar */}
         <StatsBanner />
 
-        {/* 4. About KGoC + Vision/Mission/Values (3-Column Layout matching mockup) */}
+        {/* 4. Unified About KGoC, Leadership & Vision/Mission (Founder info at single place without purple circle) */}
         <About />
 
-        {/* 5. Group Leadership Profile */}
-        <Leadership />
-
-        {/* 6. Contact Us with WhatsApp QR Code */}
+        {/* 5. Contact Us with Phone, WhatsApp & Clickable QR Code */}
         <Contact />
       </main>
 
-      {/* 7. Footer with Sweeping Multi-Striped Magenta Wave */}
+      {/* 6. Footer with Sweeping Multi-Striped Magenta Wave */}
       <Footer />
     </div>
   );

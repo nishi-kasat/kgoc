@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ArrowRight, Play, X, Compass, CheckCircle } from 'lucide-react';
-import heroGraduates from '../assets/hero-graduates.png';
+import { ArrowRight, Play, X, Compass } from 'lucide-react';
+import graduateHero from '../assets/graduate-hero.jpg';
 
 export const Hero = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
@@ -8,10 +8,10 @@ export const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative pt-24 pb-12 md:pt-32 md:pb-16 lg:pt-36 lg:pb-20 overflow-hidden bg-white"
+      className="relative pt-24 pb-10 md:pt-32 md:pb-14 lg:pt-36 lg:pb-16 overflow-hidden bg-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
           {/* Left Column: Heading, Subtitle & Action Buttons */}
           <div className="lg:col-span-6 flex flex-col items-start z-10">
@@ -61,19 +61,16 @@ export const Hero = () => {
 
           </div>
 
-          {/* Right Column: Sweeping Magenta Wave & Graduates Visual matching mockup */}
+          {/* Right Column: Hero Visual with graduate holding diploma toward sunset sky */}
           <div className="lg:col-span-6 relative flex justify-end">
-            <div className="relative w-full max-w-2xl rounded-3xl overflow-hidden shadow-card border border-[#F1D3E5]/60">
-              
-              {/* Image from mockup */}
-              <img
-                src={heroGraduates}
-                alt="Graduates celebrating with world map and global city skyline"
-                className="w-full h-auto object-cover object-center"
-              />
-
-              {/* Top and side ambient glow */}
-              <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent pointer-events-none" />
+            <div className="relative w-full max-w-xl rounded-3xl overflow-hidden shadow-card border border-[#F1D3E5]/70 bg-gradient-to-tr from-brand-light/30 to-transparent p-2">
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100">
+                <img
+                  src={graduateHero}
+                  alt="Graduate holding diploma towards sky at sunset - Empowering Global Education"
+                  className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
+                />
+              </div>
             </div>
           </div>
 

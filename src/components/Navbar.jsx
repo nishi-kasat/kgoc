@@ -22,7 +22,7 @@ export const Navbar = () => {
       ]
     },
     { name: 'Vision & Mission', href: '#vision-mission', id: 'vision-mission' },
-    { name: 'Leadership', href: '#leadership', id: 'leadership' },
+    { name: 'Leadership', href: '#about', id: 'leadership' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
@@ -30,14 +30,13 @@ export const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ['home', 'businesses', 'about', 'vision-mission', 'leadership', 'contact']
-        .map(id => document.getElementById(id));
-      const scrollPos = window.scrollY + 130;
+      const sectionIds = ['home', 'businesses', 'about', 'vision-mission', 'contact'];
+      const scrollPos = window.scrollY + 140;
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPos) {
-          setActiveSection(section.id);
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(sectionIds[i]);
           break;
         }
       }
@@ -63,7 +62,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Brand Logo matching mockup */}
+          {/* Brand Logo */}
           <a 
             href="#home" 
             className="flex items-center gap-2.5 focus:outline-none"
@@ -76,10 +75,10 @@ export const Navbar = () => {
             />
           </a>
 
-          {/* Center Navigation Links matching mockup */}
+          {/* Center Navigation Links */}
           <nav className="hidden md:flex items-center space-x-6 lg:space-x-8" aria-label="Main Navigation">
             {navLinks.map((link) => {
-              const isActive = activeSection === link.id;
+              const isActive = activeSection === link.id || (link.id === 'leadership' && activeSection === 'about');
 
               if (link.hasDropdown) {
                 return (
@@ -150,7 +149,7 @@ export const Navbar = () => {
             })}
           </nav>
 
-          {/* Right Action: Enquire Now Pill Button as seen in mockup */}
+          {/* Right Action: Enquire Now Pill Button */}
           <div className="hidden sm:flex items-center">
             <a
               href="https://wa.me/919168718833"
