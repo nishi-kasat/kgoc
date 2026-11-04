@@ -59,16 +59,6 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#vision-mission" className="hover:text-[#880650] transition-colors">
-                  Vision & Mission
-                </a>
-              </li>
-              <li>
-                <a href="#leadership" className="hover:text-[#880650] transition-colors">
-                  Leadership
-                </a>
-              </li>
-              <li>
                 <a href="#contact" className="hover:text-[#880650] transition-colors">
                   Contact Us
                 </a>

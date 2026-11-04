@@ -21,8 +21,6 @@ export const Navbar = () => {
         { label: 'Kasat Virtual College (KVCE)', href: 'https://kvce.vercel.app/', isExternal: true },
       ]
     },
-    { name: 'Vision & Mission', href: '#vision-mission', id: 'vision-mission' },
-    { name: 'Leadership', href: '#about', id: 'leadership' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
@@ -30,7 +28,7 @@ export const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sectionIds = ['home', 'businesses', 'about', 'vision-mission', 'contact'];
+      const sectionIds = ['home', 'businesses', 'about', 'contact'];
       const scrollPos = window.scrollY + 140;
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {
@@ -75,10 +73,10 @@ export const Navbar = () => {
             />
           </a>
 
-          {/* Center Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8" aria-label="Main Navigation">
+          {/* Center Navigation Links: Home | About KGoC | Our Businesses | Contact */}
+          <nav className="hidden md:flex items-center space-x-7 lg:space-x-9" aria-label="Main Navigation">
             {navLinks.map((link) => {
-              const isActive = activeSection === link.id || (link.id === 'leadership' && activeSection === 'about');
+              const isActive = activeSection === link.id;
 
               if (link.hasDropdown) {
                 return (

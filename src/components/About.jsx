@@ -5,15 +5,12 @@ import founderImg from '../assets/founder-circle.png';
 export const About = () => {
   return (
     <section id="about" className="py-12 sm:py-16 md:py-20 bg-white relative">
-      {/* Anchor for leadership navigation link so it scrolls to this unified founder section */}
-      <div id="leadership" className="absolute -top-24" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* 3-Column Layout: Founder Photo (No purple circle behind) | About & Leadership | Vision-Mission-Values */}
+        {/* 3-Column Layout: Founder Photo | About KGoC | Integrated Vision, Mission & Values */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 items-center">
           
-          {/* Column 1: Founder Photo cleanly presented without purple circle */}
+          {/* Column 1: Founder Photo */}
           <div className="md:col-span-4 lg:col-span-3 flex flex-col items-center justify-center">
             <div className="relative w-48 sm:w-56 h-48 sm:h-56 flex items-center justify-center">
               <img
@@ -35,7 +32,7 @@ export const About = () => {
             </div>
           </div>
 
-          {/* Column 2: About KGoC & Leadership Content */}
+          {/* Column 2: About KGoC Content */}
           <div className="md:col-span-8 lg:col-span-5 text-left">
             
             {/* Category Tag */}
@@ -73,8 +70,8 @@ export const About = () => {
 
           </div>
 
-          {/* Column 3: Vision, Mission & Values */}
-          <div id="vision-mission" className="md:col-span-12 lg:col-span-4 flex flex-col space-y-6 pt-4 lg:pt-0">
+          {/* Column 3: Vision, Mission & Values (integrated directly inside About KGoC) */}
+          <div className="md:col-span-12 lg:col-span-4 flex flex-col space-y-6 pt-4 lg:pt-0">
             
             {/* Our Vision */}
             <div className="flex items-start gap-4">
