@@ -8,7 +8,7 @@ export const Businesses = () => {
   return (
     <section id="businesses" className="py-12 sm:py-16 md:py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Heading with flanking horizontal lines */}
         <div className="flex items-center justify-center gap-4 sm:gap-6 mb-10 sm:mb-14">
           <div className="h-[1.5px] bg-[#880650]/40 w-16 sm:w-28 md:w-36" />
@@ -20,12 +20,12 @@ export const Businesses = () => {
 
         {/* Two-Column Horizontal Business Cards Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-          
+
           {/* Card 1: Emerge India & Overseas */}
           <div className="relative bg-white rounded-3xl border border-[#D52A91]/50 p-6 sm:p-8 shadow-xs hover:shadow-card transition-all flex flex-col justify-between overflow-hidden">
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 sm:gap-8 items-center">
-              
+
               {/* Left Column: Big Logo Container - sized identically to KVCE */}
               <div className="sm:col-span-5 flex items-center justify-center">
                 <div className="w-full h-28 sm:h-32 md:h-36 flex items-center justify-center p-1 bg-white rounded-xl">
@@ -52,9 +52,9 @@ export const Businesses = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm sm:text-base font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-xs"
-                    aria-label="Visit Emerge India & Overseas (opens in a new tab)"
+                    aria-label="Visit Kasat's Emerge India & Overseas (opens in a new tab)"
                   >
-                    <span>Visit Emerge India & Overseas</span>
+                    <span>Visit Kasat's Emerge India & Overseas</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </a>
                 </div>
@@ -68,9 +68,9 @@ export const Businesses = () => {
 
           {/* Card 2: Kasat Virtual College of Education */}
           <div className="relative bg-white rounded-3xl border border-[#D52A91]/50 p-6 sm:p-8 shadow-xs hover:shadow-card transition-all flex flex-col justify-between overflow-hidden">
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 sm:gap-8 items-center">
-              
+
               {/* Left Column: Big Logo Container - sized identically to Emerge */}
               <div className="sm:col-span-5 flex items-center justify-center">
                 <div className="w-full h-28 sm:h-32 md:h-36 flex items-center justify-center p-1 bg-white rounded-xl">
@@ -97,9 +97,9 @@ export const Businesses = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm sm:text-base font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-xs"
-                    aria-label="Visit KVCE (opens in a new tab)"
+                    aria-label="Visit Kasat Virtual College of Education (opens in a new tab)"
                   >
-                    <span>Visit KVCE</span>
+                    <span>Visit Kasat Virtual College of Education</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </a>
                 </div>
