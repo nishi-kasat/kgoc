@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 84px;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    @apply text-brand-text-primary bg-white selection:bg-brand-light selection:text-brand-deep;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom decorative horizontal stripes inspired by KGoC logo */
+.kgoc-stripe-pattern {
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(165, 0, 98, 0.95) 0px,
+    rgba(165, 0, 98, 0.95) 3px,
+    transparent 3px,
+    transparent 7px
+  );
+}
+
+.kgoc-stripe-accent {
+  position: relative;
+}
+
+.kgoc-stripe-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 56px;
+  height: 4px;
+  background: linear-gradient(90deg, #A50062 0%, #D52A91 100%);
+  border-radius: 9999px;
+}
+
+.kgoc-stripe-accent-center::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 4px;
+  background: linear-gradient(90deg, #A50062 0%, #D52A91 100%);
+  border-radius: 9999px;
+}
+
+/* Curved decorative lines */
+.curved-line {
+  stroke-dasharray: 4 4;
+}
+
+/* Glassmorphism subtle */
+.subtle-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
