@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowUpRight, Phone, MessageCircle, ArrowUp } from 'lucide-react';
 import kgocLogo from '../assets/kgoc logo.jpg';
+import { BottomWaveStripes } from './DecorativeLines';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,66 +11,65 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-brand-soft border-t border-brand-border/80 pt-16 pb-12 text-brand-text-secondary">
+    <footer className="bg-white border-t border-[#F1D3E5]/60 pt-14 pb-0 text-[#626273] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-brand-border/60">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-10 border-b border-[#F1D3E5]/70">
           
           {/* Column 1: Brand Info & Logo (5 cols) */}
           <div className="lg:col-span-5 flex flex-col items-start">
-            <div className="h-14 flex items-center mb-5 bg-white px-3 py-1.5 rounded-xl border border-brand-border/50 shadow-2xs">
+            <div className="mb-4">
               <img
                 src={kgocLogo}
                 alt="Kasat Group of Companies (KGoC)"
-                className="h-10 w-auto object-contain"
+                className="h-11 w-auto object-contain"
               />
             </div>
 
-            <p className="text-sm leading-relaxed text-brand-text-secondary max-w-sm mb-6">
+            <p className="text-xs sm:text-sm leading-relaxed text-[#626273] max-w-sm mb-4">
               Kasat Group of Companies (KGoC) is a diversified education parent organization dedicated to empowering students through ethical admissions guidance and flexible degree pathways.
             </p>
 
-            {/* Founder Note */}
-            <div className="text-xs text-brand-text-secondary/90 bg-white/80 p-3 rounded-xl border border-brand-border/50 max-w-sm">
-              <p className="font-semibold text-brand-deep">Led by Er. Nandkishor Kasat</p>
-              <p className="mt-0.5">Founder, Kasat Group of Companies</p>
+            <div className="text-xs text-[#202033] bg-[#FFF9FC] p-3 rounded-xl border border-[#F1D3E5] max-w-sm">
+              <p className="font-bold text-[#880650]">Er. Nandkishor Kasat</p>
+              <p className="text-[#626273] mt-0.5">Founder, Kasat Group of Companies</p>
             </div>
           </div>
 
           {/* Column 2: Quick Links (2 cols) */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-brand-deep mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#880650] mb-3">
               Navigation
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <a href="#home" className="hover:text-brand-primary transition-colors">
+                <a href="#home" className="hover:text-[#880650] transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-brand-primary transition-colors">
+                <a href="#about" className="hover:text-[#880650] transition-colors">
                   About KGoC
                 </a>
               </li>
               <li>
-                <a href="#businesses" className="hover:text-brand-primary transition-colors">
+                <a href="#businesses" className="hover:text-[#880650] transition-colors">
                   Our Businesses
                 </a>
               </li>
               <li>
-                <a href="#vision-mission" className="hover:text-brand-primary transition-colors">
+                <a href="#vision-mission" className="hover:text-[#880650] transition-colors">
                   Vision & Mission
                 </a>
               </li>
               <li>
-                <a href="#leadership" className="hover:text-brand-primary transition-colors">
+                <a href="#leadership" className="hover:text-[#880650] transition-colors">
                   Leadership
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-brand-primary transition-colors">
+                <a href="#contact" className="hover:text-[#880650] transition-colors">
                   Contact Us
                 </a>
               </li>
@@ -78,22 +78,22 @@ export const Footer = () => {
 
           {/* Column 3: Our Businesses (3 cols) */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-brand-deep mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#880650] mb-3">
               Our Businesses
             </h4>
-            <ul className="space-y-4 text-sm">
+            <ul className="space-y-3 text-xs sm:text-sm">
               <li>
                 <a
                   href="https://emergeio.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex flex-col p-2.5 rounded-xl bg-white/70 hover:bg-white border border-brand-border/60 transition-all shadow-2xs"
+                  className="group block p-2.5 rounded-xl bg-[#FFF9FC] hover:bg-[#FBEAF4] border border-[#F1D3E5] transition-all"
                 >
-                  <span className="font-semibold text-brand-text-primary group-hover:text-brand-primary flex items-center justify-between">
+                  <span className="font-semibold text-[#202033] group-hover:text-[#880650] flex items-center justify-between">
                     <span>Emerge India & Overseas</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />
+                    <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100" />
                   </span>
-                  <span className="text-xs text-brand-text-secondary mt-0.5">
+                  <span className="text-[11px] text-[#626273] block mt-0.5">
                     Admissions & consultancy portal
                   </span>
                 </a>
@@ -104,14 +104,14 @@ export const Footer = () => {
                   href="https://kvce.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex flex-col p-2.5 rounded-xl bg-white/70 hover:bg-white border border-brand-border/60 transition-all shadow-2xs"
+                  className="group block p-2.5 rounded-xl bg-[#FFF9FC] hover:bg-[#FBEAF4] border border-[#F1D3E5] transition-all"
                 >
-                  <span className="font-semibold text-brand-text-primary group-hover:text-brand-primary flex items-center justify-between">
+                  <span className="font-semibold text-[#202033] group-hover:text-[#880650] flex items-center justify-between">
                     <span>Kasat Virtual College</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition-opacity" />
+                    <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100" />
                   </span>
-                  <span className="text-xs text-brand-text-secondary mt-0.5">
-                    Online degree programs & courses
+                  <span className="text-[11px] text-[#626273] block mt-0.5">
+                    Online degrees & programmes
                   </span>
                 </a>
               </li>
@@ -120,26 +120,26 @@ export const Footer = () => {
 
           {/* Column 4: Contact Info (2 cols) */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-brand-deep mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#880650] mb-3">
               Direct Contact
             </h4>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-xs sm:text-sm">
               <a
                 href="tel:+919168718833"
-                className="flex items-center gap-2 hover:text-brand-primary transition-colors"
+                className="flex items-center gap-2 hover:text-[#880650] transition-colors"
                 aria-label="Call +91 91687 18833"
               >
-                <Phone className="w-4 h-4 text-brand-primary flex-shrink-0" />
-                <span className="font-semibold">+91 91687 18833</span>
+                <Phone className="w-4 h-4 text-[#880650] flex-shrink-0" />
+                <span className="font-bold text-[#202033]">+91 91687 18833</span>
               </a>
 
               <a
                 href="https://wa.me/919168718833"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-light text-brand-deep font-semibold text-xs hover:bg-brand-primary hover:text-white transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#880650] text-white font-medium text-xs hover:bg-[#68003C] transition-colors"
               >
-                <MessageCircle className="w-3.5 h-3.5 text-brand-primary" />
+                <MessageCircle className="w-3.5 h-3.5 fill-white" />
                 <span>WhatsApp Desk</span>
                 <ArrowUpRight className="w-3 h-3" />
               </a>
@@ -149,25 +149,25 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar: Copyright & Back-to-Top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-text-secondary">
+        <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#626273]">
           <p>
             © {currentYear} Kasat Group of Companies (KGoC). All rights reserved.
           </p>
 
-          <div className="flex items-center gap-6">
-            <span>Parent corporate website for Emerge India & Overseas and KVCE</span>
-            <button
-              onClick={scrollToTop}
-              className="p-2 rounded-lg bg-white border border-brand-border/70 hover:bg-brand-light text-brand-primary transition-all flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-brand-primary/40"
-              aria-label="Back to top"
-            >
-              <ArrowUp className="w-4 h-4" />
-              <span className="text-xs font-semibold">Top</span>
-            </button>
-          </div>
+          <button
+            onClick={scrollToTop}
+            className="p-2 rounded-lg bg-[#FFF9FC] border border-[#F1D3E5] hover:bg-[#FBEAF4] text-[#880650] transition-all flex items-center gap-1.5"
+            aria-label="Back to top"
+          >
+            <ArrowUp className="w-4 h-4" />
+            <span className="font-semibold text-xs">Top</span>
+          </button>
         </div>
 
       </div>
+
+      {/* Sweeping multi-striped magenta wave pattern across bottom as in mockup */}
+      <BottomWaveStripes />
     </footer>
   );
 };
