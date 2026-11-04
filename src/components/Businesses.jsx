@@ -18,31 +18,29 @@ export const Businesses = () => {
           <div className="h-[1.5px] bg-[#880650]/40 w-16 sm:w-28 md:w-36" />
         </div>
 
-        {/* Two-Column Horizontal Business Cards Layout */}
+        {/* Two-Column Horizontal Business Cards Layout with identical structural alignment */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
           
           {/* Card 1: Emerge India & Overseas */}
-          <div className="relative bg-white rounded-3xl border border-[#D52A91]/50 p-6 sm:p-7 shadow-xs hover:shadow-card transition-all flex flex-col justify-between overflow-hidden">
+          <div className="relative bg-white rounded-3xl border border-[#D52A91]/50 p-6 sm:p-8 shadow-xs hover:shadow-card transition-all flex flex-col justify-between overflow-hidden">
             
-            {/* Top Area: Logo | Divider | Description (shifted up) */}
-            <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 sm:gap-6 items-center pt-1 pb-4">
+            {/* Top Area: Logo | Divider | Description (Fixed identical height for perfect cross-card alignment) */}
+            <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 sm:gap-6 items-center">
               
               {/* Left Column: Logo Container */}
-              <div className="sm:col-span-5 flex items-center justify-center">
-                <div className="w-full h-24 sm:h-28 flex items-center justify-center p-1 bg-white rounded-xl">
-                  <img
-                    src={emergeLogo}
-                    alt="Kasat's Emerge India & Overseas Logo"
-                    className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105"
-                  />
-                </div>
+              <div className="sm:col-span-5 flex items-center justify-center h-28 sm:h-36">
+                <img
+                  src={emergeLogo}
+                  alt="Kasat's Emerge India & Overseas Logo"
+                  className="max-h-24 sm:max-h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                />
               </div>
 
               {/* Vertical divider on desktop */}
-              <div className="hidden sm:block sm:col-span-1 h-28 w-px bg-slate-200 justify-self-center" />
+              <div className="hidden sm:block sm:col-span-1 h-28 sm:h-36 w-px bg-slate-200 justify-self-center" />
 
               {/* Right Column: Description */}
-              <div className="sm:col-span-6 flex flex-col justify-center text-left">
+              <div className="sm:col-span-6 flex items-center h-28 sm:h-36 text-left">
                 <p className="text-sm sm:text-base md:text-[1.02rem] text-[#28283C] leading-relaxed font-normal">
                   A leading education consultancy offering admissions in Medical, Engineering, Management, Paramedical, Hospitality and more, in India and abroad.
                 </p>
@@ -51,7 +49,7 @@ export const Businesses = () => {
             </div>
 
             {/* Bottom Center Button */}
-            <div className="pt-2 pb-1 flex justify-center w-full z-10">
+            <div className="pt-6 pb-1 flex justify-center w-full z-10">
               <a
                 href="https://emergeio.vercel.app/"
                 target="_blank"
@@ -68,28 +66,26 @@ export const Businesses = () => {
             <CardCornerStripes />
           </div>
 
-          {/* Card 2: Kasat Virtual College of Education */}
-          <div className="relative bg-white rounded-3xl border border-[#D52A91]/50 p-6 sm:p-7 shadow-xs hover:shadow-card transition-all flex flex-col justify-between overflow-hidden">
+          {/* Card 2: Kasat Virtual College of Education (Identical alignment to Emerge card) */}
+          <div className="relative bg-white rounded-3xl border border-[#D52A91]/50 p-6 sm:p-8 shadow-xs hover:shadow-card transition-all flex flex-col justify-between overflow-hidden">
             
-            {/* Top Area: Logo | Divider | Description (shifted up) */}
-            <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 sm:gap-6 items-center pt-1 pb-4">
+            {/* Top Area: Logo | Divider | Description (Fixed identical height for perfect cross-card alignment) */}
+            <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 sm:gap-6 items-center">
               
               {/* Left Column: Logo Container */}
-              <div className="sm:col-span-5 flex items-center justify-center">
-                <div className="w-full h-24 sm:h-28 flex items-center justify-center p-1 bg-white rounded-xl">
-                  <img
-                    src={kvceLogo}
-                    alt="Kasat Virtual College of Education Logo"
-                    className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-300 hover:scale-105"
-                  />
-                </div>
+              <div className="sm:col-span-5 flex items-center justify-center h-28 sm:h-36">
+                <img
+                  src={kvceLogo}
+                  alt="Kasat Virtual College of Education Logo"
+                  className="max-h-24 sm:max-h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                />
               </div>
 
               {/* Vertical divider on desktop */}
-              <div className="hidden sm:block sm:col-span-1 h-28 w-px bg-slate-200 justify-self-center" />
+              <div className="hidden sm:block sm:col-span-1 h-28 sm:h-36 w-px bg-slate-200 justify-self-center" />
 
               {/* Right Column: Description */}
-              <div className="sm:col-span-6 flex flex-col justify-center text-left">
+              <div className="sm:col-span-6 flex items-center h-28 sm:h-36 text-left">
                 <p className="text-sm sm:text-base md:text-[1.02rem] text-[#28283C] leading-relaxed font-normal">
                   An online education platform offering UGC-entitled degrees, diplomas and specialisations through a flexible, industry-relevant learning model.
                 </p>
@@ -98,7 +94,7 @@ export const Businesses = () => {
             </div>
 
             {/* Bottom Center Button */}
-            <div className="pt-2 pb-1 flex justify-center w-full z-10">
+            <div className="pt-6 pb-1 flex justify-center w-full z-10">
               <a
                 href="https://kvce.vercel.app/"
                 target="_blank"
