@@ -21,7 +21,7 @@ export const About = () => {
               />
             </div>
             
-            {/* Founder Designation under photo - prominent readable size */}
+            {/* Founder Designation under photo */}
             <div className="mt-4 text-center">
               <h3 className="text-lg sm:text-xl font-extrabold text-[#202033]">
                 Er. Nandkishor Kasat
@@ -32,7 +32,7 @@ export const About = () => {
             </div>
           </div>
 
-          {/* Column 2: About KGoC Content - increased body text size */}
+          {/* Column 2: About KGoC Content */}
           <div className="md:col-span-8 lg:col-span-5 text-left">
             
             {/* Category Tag */}
@@ -48,29 +48,18 @@ export const About = () => {
               Building Global Careers Through Education
             </h2>
 
-            {/* Paragraphs - comfortable text-base sm:text-lg */}
+            {/* Paragraphs */}
             <p className="text-base sm:text-lg text-[#333344] leading-relaxed mb-4 font-normal">
               Founded by <strong>Er. Nandkishor Kasat</strong>, Kasat Group of Companies (KGoC) is a trusted name in education and career guidance, committed to helping students achieve their academic and professional aspirations through expert support, strategic partnerships and continuous guidance.
             </p>
 
-            <p className="text-base sm:text-lg text-[#333344] leading-relaxed mb-6 font-normal">
+            <p className="text-base sm:text-lg text-[#333344] leading-relaxed font-normal">
               Under his visionary leadership, the group operates two dedicated verticals: <strong>Emerge India & Overseas</strong> for university admissions and career counseling, and <strong>Kasat Virtual College of Education</strong> for flexible online degrees.
             </p>
 
-            {/* Action Link to Our Businesses */}
-            <div>
-              <a
-                href="#businesses"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm sm:text-base font-semibold text-white bg-[#880650] hover:bg-[#68003C] transition-all shadow-xs"
-              >
-                <span>Explore Our Businesses</span>
-                <span>→</span>
-              </a>
-            </div>
-
           </div>
 
-          {/* Column 3: Vision, Mission & Values - enhanced text size & spacing */}
+          {/* Column 3: Vision, Mission & Values */}
           <div className="md:col-span-12 lg:col-span-4 flex flex-col space-y-7 pt-4 lg:pt-0">
             
             {/* Our Vision */}
@@ -120,6 +109,17 @@ export const About = () => {
 
           </div>
 
+        </div>
+
+        {/* Explore Our Businesses Button - Shifted to the center of About KGoC section */}
+        <div className="mt-12 sm:mt-16 flex justify-center">
+          <a
+            href="#businesses"
+            className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-base font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-sm hover:shadow-card group"
+          >
+            <span>Explore Our Businesses</span>
+            <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+          </a>
         </div>
 
       </div>
