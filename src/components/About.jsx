@@ -1,6 +1,6 @@
 import React from 'react';
 import { Target, Rocket, Gem } from 'lucide-react';
-import founderImg from '../assets/founder-circle.png';
+import founderImg from '../assets/Nandkishor Kasat.jpg';
 
 export const About = () => {
   return (
@@ -12,11 +12,11 @@ export const About = () => {
           
           {/* Column 1: Founder Photo */}
           <div className="md:col-span-4 lg:col-span-3 flex flex-col items-center justify-center">
-            <div className="relative w-52 sm:w-60 h-52 sm:h-60 flex items-center justify-center">
+            <div className="relative w-52 sm:w-60 h-52 sm:h-60 rounded-2xl overflow-hidden shadow-card border border-[#F1D3E5]/70 bg-slate-50">
               <img
                 src={founderImg}
                 alt="Er. Nandkishor Kasat - Founder, Kasat Group of Companies"
-                className="w-full h-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-105"
+                className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
                 loading="lazy"
               />
             </div>
