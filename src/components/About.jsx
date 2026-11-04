@@ -57,13 +57,13 @@ export const About = () => {
               Under his visionary leadership, the group operates two dedicated verticals: <strong>Emerge India & Overseas</strong> for university admissions and career counseling, and <strong>Kasat Virtual College of Education</strong> for flexible online degrees.
             </p>
 
-            {/* Direct Connect Link */}
+            {/* Action Link to Our Businesses */}
             <div>
               <a
-                href="#contact"
+                href="#businesses"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-[#880650] hover:bg-[#68003C] transition-all shadow-xs"
               >
-                <span>Connect With Us</span>
+                <span>Explore Our Businesses</span>
                 <span>→</span>
               </a>
             </div>

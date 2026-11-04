@@ -28,7 +28,7 @@ export const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sectionIds = ['home', 'businesses', 'about', 'contact'];
+      const sectionIds = ['home', 'about', 'businesses', 'contact'];
       const scrollPos = window.scrollY + 140;
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {

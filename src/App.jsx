@@ -1,9 +1,9 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { About } from './components/About';
 import { Businesses } from './components/Businesses';
 import { StatsBanner } from './components/StatsBanner';
-import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
@@ -14,17 +14,17 @@ function App() {
       <Navbar />
 
       <main>
-        {/* 1. Hero Section with user-specified sunset graduate image */}
+        {/* 1. Hero Section */}
         <Hero />
 
-        {/* 2. Our Businesses Section */}
+        {/* 2. About KGoC, Founder & Vision/Mission/Values */}
+        <About />
+
+        {/* 3. Our Businesses Section (Placed after About KGoC) */}
         <Businesses />
 
-        {/* 3. Deep Magenta Stats Ribbon Bar */}
+        {/* 4. Deep Magenta Stats Ribbon Bar */}
         <StatsBanner />
-
-        {/* 4. Unified About KGoC, Leadership & Vision/Mission (Founder info at single place without purple circle) */}
-        <About />
 
         {/* 5. Contact Us with Phone, WhatsApp & Clickable QR Code */}
         <Contact />
