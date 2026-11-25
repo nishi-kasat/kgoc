@@ -51,7 +51,7 @@ export const Businesses = () => {
             {/* Bottom Center Button */}
             <div className="pt-6 pb-1 flex justify-center w-full z-10">
               <a
-                href="https://emergeio.vercel.app/"
+                href="https://www.emergeio.kasat.org.in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-xs whitespace-nowrap"
@@ -96,7 +96,7 @@ export const Businesses = () => {
             {/* Bottom Center Button */}
             <div className="pt-6 pb-1 flex justify-center w-full z-10">
               <a
-                href="https://kvce.vercel.app/"
+                href="https://www.kvce.kasat.org.in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-xs whitespace-nowrap"
