@@ -1,6 +1,7 @@
 import React from 'react';
 import { Eye, Target, UserCheck, Shield, Sparkles, Flame, Globe } from 'lucide-react';
 import { Reveal } from './Reveal';
+import { WatermarkField } from './WatermarkField';
 
 const values = [
   { title: 'Student Success', icon: UserCheck },
@@ -14,6 +15,7 @@ export const VisionMissionValues = () => {
   return (
     <section id="vision-mission" className="py-20 sm:py-24 md:py-32 bg-[#FFF9FC] relative overflow-hidden">
       <div className="brand-blob absolute bottom-0 -left-32 w-96 h-96 rounded-full pointer-events-none" aria-hidden="true" />
+      <WatermarkField text="KASAT" rotate={9} rows={5} repeat={4} opacityClass="opacity-40" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
         <Reveal className="mb-14 sm:mb-20 max-w-2xl">

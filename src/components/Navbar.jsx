@@ -21,6 +21,7 @@ export const Navbar = () => {
         { label: 'Kasat Virtual College of Education', href: 'https://kvce.vercel.app/', isExternal: true },
       ]
     },
+    { name: 'Vision & Mission', href: '#vision-mission', id: 'vision-mission' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
@@ -28,7 +29,7 @@ export const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sectionIds = ['home', 'about', 'businesses', 'contact'];
+      const sectionIds = ['home', 'about', 'businesses', 'vision-mission', 'contact'];
       const scrollPos = window.scrollY + 140;
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {

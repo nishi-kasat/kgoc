@@ -3,6 +3,7 @@ import { GraduationCap, Landmark, Globe, Users, ShieldCheck } from 'lucide-react
 import { Reveal } from './Reveal';
 import { Counter } from './Counter';
 import { Parallax } from './Parallax';
+import { WatermarkField } from './WatermarkField';
 
 export const StatsBanner = () => {
   const stats = [
@@ -17,14 +18,9 @@ export const StatsBanner = () => {
     <section className="relative mesh-dark py-16 sm:py-20 overflow-hidden">
       <div className="grain-overlay" />
 
-      {/* Oversized watermark word, drifting slowly as the page scrolls */}
-      <Parallax speed={-0.08} className="absolute -bottom-10 left-0 right-0 pointer-events-none hidden sm:block">
-        <div
-          className="watermark-text-light text-center text-[18vw] sm:text-[9rem] font-black leading-none select-none"
-          aria-hidden="true"
-        >
-          NUMBERS
-        </div>
+      {/* Tiled, slanted "KASAT" watermark, drifting slowly as the page scrolls */}
+      <Parallax speed={-0.08} className="absolute inset-0 pointer-events-none">
+        <WatermarkField text="KASAT" light rotate={8} rows={6} repeat={5} opacityClass="opacity-60" />
       </Parallax>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">

@@ -3,6 +3,7 @@ import { ArrowUpRight, Phone, MessageCircle, ArrowUp } from 'lucide-react';
 import kgocLogo from '../assets/kgoc logo.jpg';
 import { Reveal } from './Reveal';
 import { Magnetic } from './Magnetic';
+import { WatermarkField } from './WatermarkField';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,6 +15,7 @@ export const Footer = () => {
   return (
     <footer className="relative mesh-dark text-white/70 overflow-hidden">
       <div className="grain-overlay" />
+      <WatermarkField text="KASAT" light rotate={7} rows={6} repeat={4} opacityClass="opacity-45" />
 
       {/* Pre-footer CTA band */}
       <div className="relative border-b border-white/10">

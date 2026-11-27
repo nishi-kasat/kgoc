@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { ArrowRight, Play, X, Compass, Users, GraduationCap, Sparkle } from 'lucide-react';
-import graduateHero from '../assets/graduate-hero.jpg';
 import { Reveal } from './Reveal';
 import { Marquee } from './Marquee';
 import { Parallax } from './Parallax';
-import { Tilt } from './Tilt';
 import { Magnetic } from './Magnetic';
+import { WatermarkField } from './WatermarkField';
 
 export const Hero = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
@@ -19,6 +18,11 @@ export const Hero = () => {
     '7 CONTINENTS',
   ];
 
+  const stats = [
+    { icon: Users, value: '10,000+', label: 'Students Guided' },
+    { icon: GraduationCap, value: '3,500+', label: 'Partner Universities' },
+  ];
+
   return (
     <section id="home" className="relative overflow-hidden bg-white">
 
@@ -27,7 +31,7 @@ export const Hero = () => {
         <Marquee items={tickerItems} className="text-[11px] sm:text-xs font-bold tracking-[0.2em]" />
       </div>
 
-      <div className="relative pt-14 pb-16 md:pt-20 md:pb-24 lg:pt-24 lg:pb-28">
+      <div className="relative pt-16 pb-20 md:pt-24 md:pb-28 lg:pt-28 lg:pb-32">
 
         {/* Ambient gradient blobs — drift at different speeds on scroll for depth */}
         <Parallax speed={0.12} className="absolute -top-20 right-0 pointer-events-none">
@@ -37,123 +41,96 @@ export const Hero = () => {
           <div className="brand-blob w-80 h-80 rounded-full animate-float-slow-delayed opacity-60" aria-hidden="true" />
         </Parallax>
 
-        {/* Oversized outline watermark word, purely decorative, drifts slower than content */}
-        <Parallax speed={-0.1} className="absolute top-10 left-0 right-0 pointer-events-none hidden sm:block">
-          <div
-            className="watermark-text text-center text-[16vw] sm:text-[11rem] font-black leading-none select-none"
-            aria-hidden="true"
-          >
-            KGoC
-          </div>
+        {/* Slanted, tiled "KASAT" watermark filling the whole hero backdrop */}
+        <Parallax speed={-0.06} className="absolute inset-0 pointer-events-none">
+          <WatermarkField text="KASAT" rotate={-9} rows={7} repeat={5} opacityClass="opacity-70" />
         </Parallax>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center flex flex-col items-center">
 
-            {/* Left Column: Heading, Subtitle & Action Buttons */}
-            <Reveal className="lg:col-span-7 flex flex-col items-start z-10" y={18}>
+          <Reveal y={18}>
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#FBEAF4] border border-[#F1D3E5] mb-6">
+              <Sparkle className="w-3.5 h-3.5 text-[#880650]" />
+              <span className="text-[11px] sm:text-xs font-extrabold tracking-[0.18em] text-[#880650] uppercase">
+                Kasat Group of Companies
+              </span>
+            </div>
 
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#FBEAF4] border border-[#F1D3E5] mb-6">
-                <Sparkle className="w-3.5 h-3.5 text-[#880650]" />
-                <span className="text-[11px] sm:text-xs font-extrabold tracking-[0.18em] text-[#880650] uppercase">
-                  Kasat Group of Companies
-                </span>
-              </div>
+            {/* Main Heading — editorial serif mix */}
+            <h1 className="font-serif text-[2.6rem] sm:text-6xl md:text-[4.4rem] font-semibold text-[#2B0019] tracking-tight leading-[1.04] mb-7 max-w-4xl">
+              Building <span className="italic text-[#880650]">global</span> careers through education.
+            </h1>
 
-              {/* Main Heading — editorial serif mix */}
-              <h1 className="font-serif text-[2.6rem] sm:text-6xl md:text-[4.2rem] font-semibold text-[#2B0019] tracking-tight leading-[1.02] mb-7">
-                Building <span className="italic text-[#880650]">global</span><br />
-                careers through<br />
-                education.
-              </h1>
+            <p className="text-base sm:text-lg md:text-xl text-[#4A4A5A] font-normal leading-relaxed mb-9 max-w-xl mx-auto">
+              Empowering students through quality guidance, admissions and future-ready education solutions in India and abroad.
+            </p>
 
-              <p className="text-base sm:text-lg md:text-xl text-[#4A4A5A] font-normal leading-relaxed mb-9 max-w-xl">
-                Empowering students through quality guidance, admissions and future-ready education solutions in India and abroad.
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-wrap items-center gap-4 mb-10">
-                <Magnetic>
-                  <a
-                    href="#businesses"
-                    className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-base font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-elevated group"
-                  >
-                    <span>Explore Our Businesses</span>
-                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                  </a>
-                </Magnetic>
-
-                <button
-                  type="button"
-                  onClick={() => setVideoModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-base font-semibold text-[#2B0019] hover:text-[#880650] border border-[#202033]/15 hover:border-[#880650]/40 transition-all focus:outline-none focus:ring-2 focus:ring-[#880650]/30"
-                >
-                  <div className="w-7 h-7 rounded-full border border-current flex items-center justify-center">
-                    <Play className="w-3 h-3 fill-current ml-0.5" />
-                  </div>
-                  <span>Watch Our Story</span>
-                </button>
-              </div>
-
-              {/* Vertical chips */}
-              <div className="flex flex-wrap items-center gap-3">
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
+              <Magnetic>
                 <a
-                  href="https://www.emergeio.kasat.org.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs sm:text-sm font-semibold text-[#333344] px-4 py-2 rounded-full border border-[#F1D3E5] hover:border-[#D52A91] hover:text-[#880650] hover:bg-[#FFF9FC] transition-colors"
+                  href="#businesses"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-base font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-elevated group"
                 >
-                  Kasat's Emerge India &amp; Overseas
+                  <span>Explore Our Businesses</span>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </a>
-                <a
-                  href="https://www.kvce.kasat.org.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs sm:text-sm font-semibold text-[#333344] px-4 py-2 rounded-full border border-[#F1D3E5] hover:border-[#D52A91] hover:text-[#880650] hover:bg-[#FFF9FC] transition-colors"
+              </Magnetic>
+
+              <button
+                type="button"
+                onClick={() => setVideoModalOpen(true)}
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-base font-semibold text-[#2B0019] hover:text-[#880650] border border-[#202033]/15 hover:border-[#880650]/40 transition-all focus:outline-none focus:ring-2 focus:ring-[#880650]/30"
+              >
+                <div className="w-7 h-7 rounded-full border border-current flex items-center justify-center">
+                  <Play className="w-3 h-3 fill-current ml-0.5" />
+                </div>
+                <span>Watch Our Story</span>
+              </button>
+            </div>
+
+            {/* Vertical chips */}
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-14">
+              <a
+                href="https://www.emergeio.kasat.org.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs sm:text-sm font-semibold text-[#333344] px-4 py-2 rounded-full border border-[#F1D3E5] hover:border-[#D52A91] hover:text-[#880650] hover:bg-[#FFF9FC] transition-colors"
+              >
+                Kasat's Emerge India &amp; Overseas
+              </a>
+              <a
+                href="https://www.kvce.kasat.org.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs sm:text-sm font-semibold text-[#333344] px-4 py-2 rounded-full border border-[#F1D3E5] hover:border-[#D52A91] hover:text-[#880650] hover:bg-[#FFF9FC] transition-colors"
+              >
+                Kasat Virtual College of Education
+              </a>
+            </div>
+          </Reveal>
+
+          {/* Inline stat strip, replacing the old floating badges on the image */}
+          <Reveal delay={150} className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            {stats.map((stat, i) => {
+              const IconComp = stat.icon;
+              return (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 subtle-glass rounded-2xl shadow-elevated border border-white/60 px-5 py-4"
                 >
-                  Kasat Virtual College of Education
-                </a>
-              </div>
-
-            </Reveal>
-
-            {/* Right Column: Hero Visual, bleeding toward the edge */}
-            <Reveal className="lg:col-span-5 relative flex justify-center lg:justify-end" delay={150} y={24}>
-              <div className="relative w-full max-w-md lg:max-w-none lg:w-[115%]">
-                <Tilt className="relative rounded-[2.5rem] lg:rounded-l-[2.5rem] lg:rounded-r-none overflow-hidden shadow-elevated aspect-[4/5] sm:aspect-[4/4.2]">
-                  <img
-                    src={graduateHero}
-                    alt="Graduate holding diploma towards sky at sunset - Empowering Global Education"
-                    className="w-full h-full object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2B0019]/50 via-transparent to-transparent" />
-                </Tilt>
-
-                {/* Floating stat badge: top-left */}
-                <div className="hidden sm:flex absolute -top-6 -left-6 lg:-left-10 items-center gap-3 subtle-glass rounded-2xl shadow-elevated border border-white/60 px-4 py-3.5 animate-float-slow">
                   <div className="w-10 h-10 rounded-xl bg-[#880650] flex items-center justify-center text-white flex-shrink-0">
-                    <Users className="w-5 h-5" />
+                    <IconComp className="w-5 h-5" />
                   </div>
-                  <div>
-                    <p className="text-base font-extrabold text-[#2B0019] leading-none">10,000+</p>
-                    <p className="text-[11px] text-[#626273] font-medium mt-0.5">Students Guided</p>
+                  <div className="text-left">
+                    <p className="text-lg font-extrabold text-[#2B0019] leading-none">{stat.value}</p>
+                    <p className="text-[11px] text-[#626273] font-medium mt-0.5">{stat.label}</p>
                   </div>
                 </div>
+              );
+            })}
+          </Reveal>
 
-                {/* Floating stat badge: bottom-right */}
-                <div className="hidden sm:flex absolute -bottom-6 -right-3 lg:right-6 items-center gap-3 subtle-glass rounded-2xl shadow-elevated border border-white/60 px-4 py-3.5 animate-float-slow-delayed">
-                  <div className="w-10 h-10 rounded-xl bg-[#880650] flex items-center justify-center text-white flex-shrink-0">
-                    <GraduationCap className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-base font-extrabold text-[#2B0019] leading-none">3,500+</p>
-                    <p className="text-[11px] text-[#626273] font-medium mt-0.5">Partner Universities</p>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-
-          </div>
         </div>
       </div>
 
