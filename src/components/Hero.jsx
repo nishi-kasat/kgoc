@@ -43,7 +43,7 @@ export const Hero = () => {
 
         {/* Slanted, tiled "KASAT" watermark filling the whole hero backdrop */}
         <Parallax speed={-0.06} className="absolute inset-0 pointer-events-none">
-          <WatermarkField rotate={-9} rows={7} repeat={5} size={84} opacityClass="opacity-[0.07]" />
+          <WatermarkField rotate={-9} size={68} gap={84} opacityClass="opacity-[0.04]" />
         </Parallax>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center flex flex-col items-center">

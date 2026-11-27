@@ -2,50 +2,38 @@ import React from 'react';
 import kasatMark from '../assets/kasat-mark-circle.png';
 
 /**
- * Tiles the repeated, slanted Kasat logo mark across a section's background
- * as a subtle decorative texture — "fills" the backdrop without competing
- * with foreground content (place it before the content wrapper in markup so
- * normal DOM paint order keeps it behind).
+ * Tiles the Kasat logo mark across a section's background as a subtle,
+ * slanted decorative texture — a true CSS background-repeat tile, so it
+ * fills the backdrop edge-to-edge no matter how wide the viewport is
+ * (a fixed-count row of <img> tiles would run out on very wide screens).
  *
- * `light` lifts opacity/brightness slightly for use on dark/mesh backgrounds,
- * since the mark itself is a fixed-color magenta circle rather than an
- * adjustable-color text outline.
+ * `light` raises opacity slightly and swaps the blend mode for use on
+ * dark/mesh backgrounds, since the mark itself is a fixed-color magenta
+ * circle rather than an adjustable-color text outline.
  */
 export const WatermarkField = ({
   className = '',
   light = false,
-  rows = 5,
-  repeat = 6,
   rotate = -10,
   size = 96,
+  gap = 40,
   opacityClass = 'opacity-10',
 }) => {
+  const tile = size + gap;
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none select-none ${opacityClass} ${className}`} aria-hidden="true">
       <div
-        className="absolute inset-[-20%] flex flex-col justify-center gap-6 sm:gap-10"
-        style={{ transform: `rotate(${rotate}deg)`, transformOrigin: 'center center' }}
-      >
-        {Array.from({ length: rows }).map((_, r) => (
-          <div key={r} className="flex whitespace-nowrap items-center" style={{ gap: `${size * 0.6}px` }}>
-            {Array.from({ length: repeat }).map((_, i) => (
-              <img
-                key={i}
-                src={kasatMark}
-                alt=""
-                width={size}
-                height={size}
-                style={{
-                  width: size,
-                  height: size,
-                  flexShrink: 0,
-                  mixBlendMode: light ? 'screen' : 'multiply',
-                }}
-              />
-            ))}
-          </div>
-        ))}
-      </div>
+        className="absolute inset-[-40%]"
+        style={{
+          transform: `rotate(${rotate}deg)`,
+          transformOrigin: 'center center',
+          backgroundImage: `url(${kasatMark})`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: `${tile}px ${tile}px`,
+          backgroundPosition: 'center',
+          mixBlendMode: light ? 'screen' : 'multiply',
+        }}
+      />
     </div>
   );
 };

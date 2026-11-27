@@ -11,7 +11,7 @@ export const About = () => {
     <section id="about" className="py-20 sm:py-24 md:py-32 bg-white relative overflow-hidden">
       {/* Ambient decorative blob */}
       <div className="brand-blob absolute -top-24 -left-24 w-72 h-72 rounded-full pointer-events-none" aria-hidden="true" />
-      <WatermarkField rotate={-6} rows={5} repeat={4} size={88} opacityClass="opacity-[0.08]" />
+      <WatermarkField rotate={-6} size={72} gap={88} opacityClass="opacity-[0.045]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
