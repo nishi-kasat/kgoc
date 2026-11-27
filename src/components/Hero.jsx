@@ -44,7 +44,7 @@ export const Hero = () => {
         {/* Slanted, tiled Kasat mark filling the whole hero backdrop. Not
             parallax-driven: a scroll-linked shift would drag this layer away
             from the section's own edges and expose a blank seam. */}
-        <WatermarkField rotate={-9} size={68} gap={84} opacityClass="opacity-[0.04]" />
+        <WatermarkField rotate={-9} size={68} gap={84} opacityClass="opacity-[0.07]" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center flex flex-col items-center">
 
