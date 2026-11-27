@@ -19,8 +19,8 @@ export const Contact = () => {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FBEAF4] text-xs sm:text-sm font-bold text-[#880650] uppercase tracking-wider mb-3">
             Get In Touch
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-[2.6rem] font-extrabold text-[#202033] tracking-tight max-w-3xl leading-tight">
-            Connect with Kasat Group
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-[#202033] tracking-tight max-w-3xl leading-[1.08]">
+            Connect with <span className="italic text-[#880650]">Kasat Group</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg md:text-xl text-[#4A4A5A] max-w-2xl leading-relaxed">
             Have questions about Kasat Group of Companies or our educational verticals? Connect directly with our team.
@@ -42,8 +42,8 @@ export const Contact = () => {
                   Direct Enquiry Desk
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#202033] mb-4">
-                  We're Here to Guide You
+                <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#202033] mb-4">
+                  We're here to guide you
                 </h3>
 
                 <p className="text-base sm:text-lg text-[#3E3E4E] leading-relaxed mb-8">

@@ -4,76 +4,57 @@ import { Reveal } from './Reveal';
 
 export const StatsBanner = () => {
   const stats = [
-    {
-      icon: GraduationCap,
-      value: '1500+',
-      label: 'Courses',
-    },
-    {
-      icon: Landmark,
-      value: '3500+',
-      label: 'Universities',
-    },
-    {
-      icon: Globe,
-      value: '7',
-      label: 'Continents',
-    },
-    {
-      icon: Users,
-      value: '10,000+',
-      label: 'Students Guided',
-    },
-    {
-      icon: ShieldCheck,
-      value: '100%',
-      label: 'Trusted Support',
-    },
+    { icon: GraduationCap, value: '1,500+', label: 'Courses' },
+    { icon: Landmark, value: '3,500+', label: 'Universities' },
+    { icon: Globe, value: '7', label: 'Continents' },
+    { icon: Users, value: '10,000+', label: 'Students Guided' },
+    { icon: ShieldCheck, value: '100%', label: 'Trusted Support' },
   ];
 
   return (
-    <section className="py-6 sm:py-8 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Deep Magenta Ribbon Banner matching mockup */}
-        <Reveal className="relative bg-[#880650] rounded-2xl sm:rounded-3xl shadow-md py-5 sm:py-6 px-4 sm:px-8 text-white overflow-hidden">
-          {/* Subtle stripe texture echoing the brand mark */}
-          <div
-            className="absolute inset-0 opacity-[0.07] pointer-events-none"
-            style={{ backgroundImage: 'repeating-linear-gradient(135deg, #FFFFFF, #FFFFFF 2px, transparent 2px, transparent 14px)' }}
-            aria-hidden="true"
-          />
-          <div className="relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-2 items-center">
-            {stats.map((item, idx) => {
-              const IconComp = item.icon;
-              const isLast = idx === stats.length - 1;
+    <section className="relative mesh-dark py-16 sm:py-20 overflow-hidden">
+      <div className="grain-overlay" />
 
-              return (
-                <div
-                  key={idx}
-                  className={`flex items-center justify-center gap-3 sm:gap-3.5 py-1 px-2 transition-transform duration-200 hover:scale-[1.04] ${
-                    !isLast ? 'md:border-r md:border-white/20' : ''
-                  }`}
-                >
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                    <IconComp className="w-5 h-5 text-white" />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-lg sm:text-xl font-extrabold tracking-tight leading-none text-white">
-                      {item.value}
-                    </p>
-                    <p className="text-[11px] sm:text-xs text-white/80 font-medium mt-1 leading-tight">
-                      {item.label}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+      {/* Oversized watermark word */}
+      <div
+        className="watermark-text-light absolute -bottom-10 left-0 right-0 text-center text-[18vw] sm:text-[9rem] font-black leading-none pointer-events-none select-none hidden sm:block"
+        aria-hidden="true"
+      >
+        NUMBERS
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <Reveal className="text-center mb-10 sm:mb-14">
+          <span className="text-xs sm:text-sm font-extrabold tracking-[0.25em] text-[#F6A6CE] uppercase">
+            By the Numbers
+          </span>
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-white mt-3 tracking-tight">
+            A scale that speaks for itself
+          </h2>
         </Reveal>
 
+        <Reveal delay={100} className="grid grid-cols-2 md:grid-cols-5 gap-6 sm:gap-8">
+          {stats.map((item, idx) => {
+            const IconComp = item.icon;
+            return (
+              <div
+                key={idx}
+                className="flex flex-col items-center text-center gap-3 py-4 transition-transform duration-300 hover:-translate-y-1"
+              >
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0">
+                  <IconComp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                </div>
+                <p className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-none text-white">
+                  {item.value}
+                </p>
+                <p className="text-[11px] sm:text-xs text-white/60 font-semibold uppercase tracking-wider">
+                  {item.label}
+                </p>
+              </div>
+            );
+          })}
+        </Reveal>
       </div>
     </section>
   );
 };
-

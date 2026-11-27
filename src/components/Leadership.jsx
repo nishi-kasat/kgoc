@@ -15,8 +15,8 @@ export const Leadership = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-light text-xs font-bold text-brand-primary uppercase tracking-wider mb-3">
             Group Leadership
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-[2.6rem] font-extrabold text-brand-text-primary tracking-tight max-w-3xl leading-tight">
-            Leadership & Vision
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-brand-text-primary tracking-tight max-w-3xl leading-[1.08]">
+            Leadership &amp; <span className="italic text-brand-primary">Vision</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-text-secondary max-w-2xl">
             Under the visionary guidance of Er. Nandkishor Kasat, Kasat Group of Companies bridges academic goals with credible pathways.
@@ -79,18 +79,18 @@ export const Leadership = () => {
                 Founder's Perspective
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-text-primary mb-1">
+              <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-brand-text-primary mb-1">
                 Er. Nandkishor Kasat
               </h3>
-              
+
               <p className="text-sm font-semibold text-brand-primary mb-6">
                 Founder — Kasat Group of Companies
               </p>
 
               {/* Quote block */}
-              <div className="relative mb-6 pl-5 border-l-3 border-brand-primary">
-                <Quote className="w-8 h-8 text-brand-light/80 absolute -top-4 -left-3 -z-10 rotate-180" />
-                <p className="text-brand-text-primary font-medium italic text-base leading-relaxed">
+              <div className="relative mb-6 pl-6 border-l-2 border-brand-primary">
+                <Quote className="w-10 h-10 text-brand-light absolute -top-5 -left-4 -z-10 rotate-180" />
+                <p className="font-serif text-brand-text-primary font-medium italic text-lg sm:text-xl leading-relaxed">
                   "Education is the cornerstone of societal progress and personal transformation. At Kasat Group of Companies, we strive to build platforms where students receive transparent counsel, genuine opportunities, and flexible pathways that align with modern global demands."
                 </p>
               </div>

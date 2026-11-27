@@ -55,8 +55,8 @@ export const About = () => {
               </span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#6F0043] tracking-tight leading-tight mb-5">
-              Building Global Careers Through Education
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#6F0043] tracking-tight leading-[1.1] mb-5">
+              Building <span className="italic">global</span> careers through education
             </h2>
 
             <p className="text-base sm:text-lg text-[#333344] leading-relaxed mb-4 font-normal">

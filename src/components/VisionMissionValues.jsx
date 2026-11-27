@@ -22,8 +22,8 @@ export const VisionMissionValues = () => {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-light text-xs font-bold text-brand-primary uppercase tracking-wider mb-3">
             Guiding Philosophy
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-[2.6rem] font-extrabold text-brand-text-primary tracking-tight max-w-3xl leading-tight">
-            Vision, Mission & Values
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-brand-text-primary tracking-tight max-w-3xl leading-[1.08]">
+            Vision, Mission &amp; <span className="italic text-brand-primary">Values</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-brand-text-secondary max-w-2xl">
             The core tenets that direct the initiatives, leadership, and student-focused services of Kasat Group of Companies.
@@ -46,7 +46,7 @@ export const VisionMissionValues = () => {
               Long-term Aspiration
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-text-primary mb-4">
+            <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-brand-text-primary mb-4">
               Our Vision
             </h3>
 
@@ -72,7 +72,7 @@ export const VisionMissionValues = () => {
               Action & Purpose
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-text-primary mb-4">
+            <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-brand-text-primary mb-4">
               Our Mission
             </h3>
 
@@ -98,7 +98,7 @@ export const VisionMissionValues = () => {
                 <HeartHandshake className="w-4 h-4" />
                 Foundational Pillars
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-text-primary">
+              <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-brand-text-primary">
                 Our Values
               </h3>
             </div>
