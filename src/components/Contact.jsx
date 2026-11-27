@@ -13,7 +13,7 @@ export const Contact = () => {
   return (
     <section id="contact" className="py-14 sm:py-20 md:py-24 bg-white relative overflow-hidden">
       <div className="brand-blob absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none" aria-hidden="true" />
-      <WatermarkField text="KASAT" rotate={-8} rows={5} repeat={4} opacityClass="opacity-35" />
+      <WatermarkField rotate={-8} rows={5} repeat={4} size={88} opacityClass="opacity-[0.08]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
         {/* Section Header */}

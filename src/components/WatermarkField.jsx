@@ -1,21 +1,24 @@
 import React from 'react';
+import kasatMark from '../assets/kasat-mark-circle.png';
 
 /**
- * Tiles a repeated, slanted brand word across a section's background as a
- * subtle decorative texture — "fills" the backdrop without competing with
- * foreground content (place it before the content wrapper in markup so
+ * Tiles the repeated, slanted Kasat logo mark across a section's background
+ * as a subtle decorative texture — "fills" the backdrop without competing
+ * with foreground content (place it before the content wrapper in markup so
  * normal DOM paint order keeps it behind).
  *
- * `light` switches the outline color for use on dark/mesh backgrounds.
+ * `light` lifts opacity/brightness slightly for use on dark/mesh backgrounds,
+ * since the mark itself is a fixed-color magenta circle rather than an
+ * adjustable-color text outline.
  */
 export const WatermarkField = ({
-  text = 'KASAT',
   className = '',
   light = false,
-  rows = 6,
-  repeat = 5,
+  rows = 5,
+  repeat = 6,
   rotate = -10,
-  opacityClass = 'opacity-100',
+  size = 96,
+  opacityClass = 'opacity-10',
 }) => {
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none select-none ${opacityClass} ${className}`} aria-hidden="true">
@@ -24,16 +27,21 @@ export const WatermarkField = ({
         style={{ transform: `rotate(${rotate}deg)`, transformOrigin: 'center center' }}
       >
         {Array.from({ length: rows }).map((_, r) => (
-          <div key={r} className="flex whitespace-nowrap">
+          <div key={r} className="flex whitespace-nowrap items-center" style={{ gap: `${size * 0.6}px` }}>
             {Array.from({ length: repeat }).map((_, i) => (
-              <span
+              <img
                 key={i}
-                className={`font-serif font-black text-4xl sm:text-6xl md:text-7xl mx-5 sm:mx-8 ${
-                  light ? 'watermark-text-light' : 'watermark-text'
-                }`}
-              >
-                {text}
-              </span>
+                src={kasatMark}
+                alt=""
+                width={size}
+                height={size}
+                style={{
+                  width: size,
+                  height: size,
+                  flexShrink: 0,
+                  mixBlendMode: light ? 'screen' : 'multiply',
+                }}
+              />
             ))}
           </div>
         ))}

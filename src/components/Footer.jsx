@@ -15,7 +15,7 @@ export const Footer = () => {
   return (
     <footer className="relative mesh-dark text-white/70 overflow-hidden">
       <div className="grain-overlay" />
-      <WatermarkField text="KASAT" light rotate={7} rows={6} repeat={4} opacityClass="opacity-45" />
+      <WatermarkField light rotate={7} rows={6} repeat={4} size={88} opacityClass="opacity-[0.16]" />
 
       {/* Pre-footer CTA band */}
       <div className="relative border-b border-white/10">

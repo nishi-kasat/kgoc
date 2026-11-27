@@ -27,7 +27,7 @@ const businesses = [
 export const Businesses = () => {
   return (
     <section id="businesses" className="py-20 sm:py-24 md:py-32 bg-white relative overflow-hidden">
-      <WatermarkField text="KASAT" rotate={-7} rows={5} repeat={4} opacityClass="opacity-40" />
+      <WatermarkField rotate={-7} rows={5} repeat={4} size={88} opacityClass="opacity-[0.08]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
         {/* Section Heading */}
