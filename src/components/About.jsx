@@ -2,6 +2,8 @@ import React from 'react';
 import { Quote } from 'lucide-react';
 import founderImg from '../assets/Nandkishor Kasat.jpg';
 import { Reveal } from './Reveal';
+import { Tilt } from './Tilt';
+import { Magnetic } from './Magnetic';
 
 export const About = () => {
   return (
@@ -14,11 +16,11 @@ export const About = () => {
 
           {/* Column 1: Founder Photo — bleeding, editorial framing (echoes hero image treatment) */}
           <Reveal className="lg:col-span-5 relative" y={16}>
-            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-elevated">
+            <Tilt className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-elevated" max={5}>
               <img
                 src={founderImg}
                 alt="Er. Nandkishor Kasat - Founder, Kasat Group of Companies"
-                className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-[1.03]"
+                className="w-full h-full object-cover object-top"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2B0019]/70 via-transparent to-transparent" />
@@ -30,7 +32,7 @@ export const About = () => {
                   Founder, Kasat Group of Companies
                 </p>
               </div>
-            </div>
+            </Tilt>
           </Reveal>
 
           {/* Column 2: Org story + founder's own words, one strong voice instead of two repeated sections */}
@@ -61,13 +63,15 @@ export const About = () => {
               </p>
             </div>
 
-            <a
-              href="#businesses"
-              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-base font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-sm hover:shadow-card group"
-            >
-              <span>Explore Our Businesses</span>
-              <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-            </a>
+            <Magnetic>
+              <a
+                href="#businesses"
+                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-base font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-sm hover:shadow-card group"
+              >
+                <span>Explore Our Businesses</span>
+                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </a>
+            </Magnetic>
           </Reveal>
 
         </div>

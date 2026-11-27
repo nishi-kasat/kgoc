@@ -3,6 +3,9 @@ import { ArrowRight, Play, X, Compass, Users, GraduationCap, Sparkle } from 'luc
 import graduateHero from '../assets/graduate-hero.jpg';
 import { Reveal } from './Reveal';
 import { Marquee } from './Marquee';
+import { Parallax } from './Parallax';
+import { Tilt } from './Tilt';
+import { Magnetic } from './Magnetic';
 
 export const Hero = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
@@ -26,17 +29,23 @@ export const Hero = () => {
 
       <div className="relative pt-14 pb-16 md:pt-20 md:pb-24 lg:pt-24 lg:pb-28">
 
-        {/* Ambient gradient blobs */}
-        <div className="brand-blob absolute -top-20 right-0 w-[32rem] h-[32rem] rounded-full pointer-events-none animate-float-slow" aria-hidden="true" />
-        <div className="brand-blob absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none animate-float-slow-delayed opacity-60" aria-hidden="true" />
+        {/* Ambient gradient blobs — drift at different speeds on scroll for depth */}
+        <Parallax speed={0.12} className="absolute -top-20 right-0 pointer-events-none">
+          <div className="brand-blob w-[32rem] h-[32rem] rounded-full animate-float-slow" aria-hidden="true" />
+        </Parallax>
+        <Parallax speed={-0.08} className="absolute bottom-0 left-0 pointer-events-none">
+          <div className="brand-blob w-80 h-80 rounded-full animate-float-slow-delayed opacity-60" aria-hidden="true" />
+        </Parallax>
 
-        {/* Oversized outline watermark word, purely decorative */}
-        <div
-          className="watermark-text absolute top-10 left-0 right-0 text-center text-[16vw] sm:text-[11rem] font-black leading-none pointer-events-none select-none hidden sm:block"
-          aria-hidden="true"
-        >
-          KGoC
-        </div>
+        {/* Oversized outline watermark word, purely decorative, drifts slower than content */}
+        <Parallax speed={-0.1} className="absolute top-10 left-0 right-0 pointer-events-none hidden sm:block">
+          <div
+            className="watermark-text text-center text-[16vw] sm:text-[11rem] font-black leading-none select-none"
+            aria-hidden="true"
+          >
+            KGoC
+          </div>
+        </Parallax>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
@@ -64,13 +73,15 @@ export const Hero = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap items-center gap-4 mb-10">
-                <a
-                  href="#businesses"
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-base font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-elevated group"
-                >
-                  <span>Explore Our Businesses</span>
-                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </a>
+                <Magnetic>
+                  <a
+                    href="#businesses"
+                    className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-base font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-elevated group"
+                  >
+                    <span>Explore Our Businesses</span>
+                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  </a>
+                </Magnetic>
 
                 <button
                   type="button"
@@ -109,14 +120,14 @@ export const Hero = () => {
             {/* Right Column: Hero Visual, bleeding toward the edge */}
             <Reveal className="lg:col-span-5 relative flex justify-center lg:justify-end" delay={150} y={24}>
               <div className="relative w-full max-w-md lg:max-w-none lg:w-[115%]">
-                <div className="relative rounded-[2.5rem] lg:rounded-l-[2.5rem] lg:rounded-r-none overflow-hidden shadow-elevated aspect-[4/5] sm:aspect-[4/4.2]">
+                <Tilt className="relative rounded-[2.5rem] lg:rounded-l-[2.5rem] lg:rounded-r-none overflow-hidden shadow-elevated aspect-[4/5] sm:aspect-[4/4.2]">
                   <img
                     src={graduateHero}
                     alt="Graduate holding diploma towards sky at sunset - Empowering Global Education"
-                    className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.04]"
+                    className="w-full h-full object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#2B0019]/50 via-transparent to-transparent" />
-                </div>
+                </Tilt>
 
                 {/* Floating stat badge: top-left */}
                 <div className="hidden sm:flex absolute -top-6 -left-6 lg:-left-10 items-center gap-3 subtle-glass rounded-2xl shadow-elevated border border-white/60 px-4 py-3.5 animate-float-slow">

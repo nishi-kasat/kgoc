@@ -1,6 +1,8 @@
 import React from 'react';
 import { GraduationCap, Landmark, Globe, Users, ShieldCheck } from 'lucide-react';
 import { Reveal } from './Reveal';
+import { Counter } from './Counter';
+import { Parallax } from './Parallax';
 
 export const StatsBanner = () => {
   const stats = [
@@ -15,13 +17,15 @@ export const StatsBanner = () => {
     <section className="relative mesh-dark py-16 sm:py-20 overflow-hidden">
       <div className="grain-overlay" />
 
-      {/* Oversized watermark word */}
-      <div
-        className="watermark-text-light absolute -bottom-10 left-0 right-0 text-center text-[18vw] sm:text-[9rem] font-black leading-none pointer-events-none select-none hidden sm:block"
-        aria-hidden="true"
-      >
-        NUMBERS
-      </div>
+      {/* Oversized watermark word, drifting slowly as the page scrolls */}
+      <Parallax speed={-0.08} className="absolute -bottom-10 left-0 right-0 pointer-events-none hidden sm:block">
+        <div
+          className="watermark-text-light text-center text-[18vw] sm:text-[9rem] font-black leading-none select-none"
+          aria-hidden="true"
+        >
+          NUMBERS
+        </div>
+      </Parallax>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <Reveal className="text-center mb-10 sm:mb-14">
@@ -44,8 +48,8 @@ export const StatsBanner = () => {
                 <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0">
                   <IconComp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <p className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-none text-white">
-                  {item.value}
+                <p className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-none text-white tabular-nums">
+                  <Counter value={item.value} />
                 </p>
                 <p className="text-[11px] sm:text-xs text-white/60 font-semibold uppercase tracking-wider">
                   {item.label}

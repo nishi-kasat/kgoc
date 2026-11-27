@@ -185,3 +185,24 @@
   .animate-gradient-pan { animation: none !important; }
 }
 
+/* Cursor-following soft glow — pair with a JS mousemove handler that sets
+   --mx / --my (percentages) on the same element. */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(213, 42, 145, 0.14), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0;
+}
+.spotlight:hover::before {
+  opacity: 1;
+}
+

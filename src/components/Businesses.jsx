@@ -59,16 +59,21 @@ export const Businesses = () => {
                 <span className="font-serif text-2xl text-[#D52A91]/50 font-semibold">{biz.index}</span>
               </div>
 
-              {/* Logo panel */}
+              {/* Logo panel — cursor-following glow on hover */}
               <div
-                className={`lg:col-span-4 flex items-center justify-center h-32 sm:h-40 rounded-3xl bg-gradient-to-br from-[#FFF9FC] to-[#FBEAF4] border border-[#F1D3E5] p-6 transition-all duration-300 group-hover:shadow-card-hover group-hover:-translate-y-1 ${
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  e.currentTarget.style.setProperty('--mx', `${((e.clientX - rect.left) / rect.width) * 100}%`);
+                  e.currentTarget.style.setProperty('--my', `${((e.clientY - rect.top) / rect.height) * 100}%`);
+                }}
+                className={`spotlight lg:col-span-4 flex items-center justify-center h-32 sm:h-40 rounded-3xl bg-gradient-to-br from-[#FFF9FC] to-[#FBEAF4] border border-[#F1D3E5] p-6 transition-all duration-300 group-hover:shadow-card-hover group-hover:-translate-y-1 ${
                   i % 2 === 1 ? 'lg:order-2' : ''
                 }`}
               >
                 <img
                   src={biz.logo}
                   alt={`${biz.name} Logo`}
-                  className="max-h-20 sm:max-h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="relative z-[1] max-h-20 sm:max-h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
 

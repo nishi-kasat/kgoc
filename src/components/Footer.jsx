@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowUpRight, Phone, MessageCircle, ArrowUp } from 'lucide-react';
 import kgocLogo from '../assets/kgoc logo.jpg';
 import { Reveal } from './Reveal';
+import { Magnetic } from './Magnetic';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -27,22 +28,26 @@ export const Footer = () => {
               </h2>
             </div>
             <div className="flex flex-wrap gap-4">
-              <a
-                href="https://wa.me/919168718833"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-base font-semibold text-[#2B0019] bg-white hover:bg-[#FBEAF4] active:scale-[0.98] transition-all shadow-elevated"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>Chat on WhatsApp</span>
-              </a>
-              <a
-                href="tel:+919168718833"
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-base font-semibold text-white border border-white/25 hover:border-white/50 transition-all"
-              >
-                <Phone className="w-4 h-4" />
-                <span>+91 91687 18833</span>
-              </a>
+              <Magnetic>
+                <a
+                  href="https://wa.me/919168718833"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-base font-semibold text-[#2B0019] bg-white hover:bg-[#FBEAF4] active:scale-[0.98] transition-all shadow-elevated"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </Magnetic>
+              <Magnetic>
+                <a
+                  href="tel:+919168718833"
+                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-base font-semibold text-white border border-white/25 hover:border-white/50 transition-all"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>+91 91687 18833</span>
+                </a>
+              </Magnetic>
             </div>
           </Reveal>
         </div>

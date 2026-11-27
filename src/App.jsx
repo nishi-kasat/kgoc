@@ -1,4 +1,5 @@
 import React from 'react';
+import { ScrollProgress } from './components/ScrollProgress';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -11,6 +12,8 @@ import { Footer } from './components/Footer';
 function App() {
   return (
     <div className="min-h-screen bg-white text-[#202033] selection:bg-[#FBEAF4] selection:text-[#880650]">
+      <ScrollProgress />
+
       {/* Sticky Header Navigation */}
       <Navbar />
 
