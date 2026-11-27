@@ -51,9 +51,9 @@ export const Navbar = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
-        isScrolled 
-          ? 'shadow-sm border-b border-[#F1D3E5]/80 py-2.5' 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md ${
+        isScrolled
+          ? 'shadow-sm border-b border-[#F1D3E5]/80 py-2.5'
           : 'border-b border-[#F1D3E5]/50 py-3.5'
       }`}
     >

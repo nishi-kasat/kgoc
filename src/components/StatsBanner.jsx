@@ -1,5 +1,6 @@
 import React from 'react';
 import { GraduationCap, Landmark, Globe, Users, ShieldCheck } from 'lucide-react';
+import { Reveal } from './Reveal';
 
 export const StatsBanner = () => {
   const stats = [
@@ -35,8 +36,14 @@ export const StatsBanner = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Deep Magenta Ribbon Banner matching mockup */}
-        <div className="bg-[#880650] rounded-2xl sm:rounded-3xl shadow-md py-5 sm:py-6 px-4 sm:px-8 text-white">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-2 items-center">
+        <Reveal className="relative bg-[#880650] rounded-2xl sm:rounded-3xl shadow-md py-5 sm:py-6 px-4 sm:px-8 text-white overflow-hidden">
+          {/* Subtle stripe texture echoing the brand mark */}
+          <div
+            className="absolute inset-0 opacity-[0.07] pointer-events-none"
+            style={{ backgroundImage: 'repeating-linear-gradient(135deg, #FFFFFF, #FFFFFF 2px, transparent 2px, transparent 14px)' }}
+            aria-hidden="true"
+          />
+          <div className="relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-2 items-center">
             {stats.map((item, idx) => {
               const IconComp = item.icon;
               const isLast = idx === stats.length - 1;
@@ -44,7 +51,7 @@ export const StatsBanner = () => {
               return (
                 <div
                   key={idx}
-                  className={`flex items-center justify-center gap-3 sm:gap-3.5 py-1 px-2 ${
+                  className={`flex items-center justify-center gap-3 sm:gap-3.5 py-1 px-2 transition-transform duration-200 hover:scale-[1.04] ${
                     !isLast ? 'md:border-r md:border-white/20' : ''
                   }`}
                 >
@@ -63,7 +70,7 @@ export const StatsBanner = () => {
               );
             })}
           </div>
-        </div>
+        </Reveal>
 
       </div>
     </section>

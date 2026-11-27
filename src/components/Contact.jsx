@@ -2,6 +2,7 @@ import React from 'react';
 import { Phone, MessageCircle, QrCode, ArrowUpRight, ShieldCheck, Sparkles } from 'lucide-react';
 import whatsappQr from '../assets/whatsapp qr.png';
 import { StripeAccents } from './DecorativeLines';
+import { Reveal } from './Reveal';
 
 export const Contact = () => {
   const whatsappUrl = "https://wa.me/919168718833";
@@ -9,11 +10,12 @@ export const Contact = () => {
   const phoneTel = "tel:+919168718833";
 
   return (
-    <section id="contact" className="py-14 sm:py-20 md:py-24 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+    <section id="contact" className="py-14 sm:py-20 md:py-24 bg-white relative overflow-hidden">
+      <div className="brand-blob absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none" aria-hidden="true" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
+        <Reveal className="flex flex-col items-center text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FBEAF4] text-xs sm:text-sm font-bold text-[#880650] uppercase tracking-wider mb-3">
             Get In Touch
           </div>
@@ -26,10 +28,10 @@ export const Contact = () => {
           <div className="mt-4">
             <StripeAccents className="items-center" />
           </div>
-        </div>
+        </Reveal>
 
         {/* Two-Column Contact Card */}
-        <div className="max-w-5xl mx-auto bg-gradient-to-br from-[#FFF9FC] via-white to-[#FFF9FC]/40 rounded-3xl p-6 sm:p-10 md:p-12 border border-[#F1D3E5] shadow-card">
+        <Reveal delay={100} className="max-w-5xl mx-auto bg-gradient-to-br from-[#FFF9FC] via-white to-[#FFF9FC]/40 rounded-3xl p-6 sm:p-10 md:p-12 border border-[#F1D3E5] shadow-card">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
             {/* Left Column: Direct Phone & WhatsApp Access */}
@@ -92,7 +94,7 @@ export const Contact = () => {
 
             {/* Right Column: WhatsApp QR Code */}
             <div className="lg:col-span-5 flex flex-col items-center">
-              <div className="w-full max-w-sm bg-white rounded-3xl p-6 sm:p-8 border-2 border-[#F1D3E5] shadow-card text-center flex flex-col items-center relative overflow-hidden group">
+              <div className="w-full max-w-sm bg-white rounded-3xl p-6 sm:p-8 border-2 border-[#F1D3E5] shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden group">
                 
                 {/* Decorative stripe in QR card */}
                 <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#880650] to-[#D52A91]" />
@@ -143,7 +145,7 @@ export const Contact = () => {
             </div>
 
           </div>
-        </div>
+        </Reveal>
 
       </div>
     </section>

@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowUpRight, Phone, MessageCircle, ArrowUp } from 'lucide-react';
 import kgocLogo from '../assets/kgoc logo.jpg';
 import { BottomWaveStripes } from './DecorativeLines';
+import { Reveal } from './Reveal';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,7 +16,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-10 border-b border-[#F1D3E5]/70">
+        <Reveal as="div" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-10 border-b border-[#F1D3E5]/70" y={14}>
           
           {/* Column 1: Brand Info & Logo (5 cols) */}
           <div className="lg:col-span-5 flex flex-col items-start">
@@ -136,7 +137,7 @@ export const Footer = () => {
             </div>
           </div>
 
-        </div>
+        </Reveal>
 
         {/* Bottom Bar: Copyright & Back-to-Top */}
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#626273]">
@@ -146,7 +147,7 @@ export const Footer = () => {
 
           <button
             onClick={scrollToTop}
-            className="p-2 rounded-lg bg-[#FFF9FC] border border-[#F1D3E5] hover:bg-[#FBEAF4] text-[#880650] transition-all flex items-center gap-1.5"
+            className="p-2 rounded-lg bg-[#FFF9FC] border border-[#F1D3E5] hover:bg-[#FBEAF4] hover:-translate-y-0.5 text-[#880650] transition-all flex items-center gap-1.5"
             aria-label="Back to top"
           >
             <ArrowUp className="w-4 h-4" />

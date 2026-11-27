@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
-import { ArrowRight, Play, X, Compass } from 'lucide-react';
+import { ArrowRight, Play, X, Compass, Users, GraduationCap } from 'lucide-react';
 import graduateHero from '../assets/graduate-hero.jpg';
+import { Reveal } from './Reveal';
 
 export const Hero = () => {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       className="relative pt-24 pb-12 md:pt-32 md:pb-16 lg:pt-36 lg:pb-20 overflow-hidden bg-white"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Ambient decorative blobs */}
+      <div className="brand-blob absolute -top-20 right-0 w-96 h-96 rounded-full pointer-events-none animate-float-slow" aria-hidden="true" />
+      <div className="brand-blob absolute bottom-0 left-0 w-72 h-72 rounded-full pointer-events-none animate-float-slow-delayed opacity-60" aria-hidden="true" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-          
+
           {/* Left Column: Heading, Subtitle & Action Buttons */}
-          <div className="lg:col-span-6 flex flex-col items-start z-10">
+          <Reveal className="lg:col-span-6 flex flex-col items-start z-10" y={16}>
             
             {/* Tagline with horizontal line */}
             <div className="flex items-center gap-3 w-full mb-4">
@@ -59,10 +64,10 @@ export const Hero = () => {
               </button>
             </div>
 
-          </div>
+          </Reveal>
 
           {/* Right Column: Hero Visual with graduate holding diploma toward sunset sky */}
-          <div className="lg:col-span-6 relative flex justify-end">
+          <Reveal className="lg:col-span-6 relative flex justify-end" delay={150} y={24}>
             <div className="relative w-full max-w-xl rounded-3xl overflow-hidden shadow-card border border-[#F1D3E5]/70 bg-gradient-to-tr from-brand-light/30 to-transparent p-2">
               <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100">
                 <img
@@ -72,7 +77,29 @@ export const Hero = () => {
                 />
               </div>
             </div>
-          </div>
+
+            {/* Floating stat badge: top-left */}
+            <div className="hidden sm:flex absolute -top-5 -left-5 items-center gap-3 bg-white rounded-2xl shadow-card border border-[#F1D3E5] px-4 py-3 animate-float-slow">
+              <div className="w-10 h-10 rounded-xl bg-[#FBEAF4] flex items-center justify-center text-[#880650] flex-shrink-0">
+                <Users className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-base font-extrabold text-[#202033] leading-none">10,000+</p>
+                <p className="text-[11px] text-[#626273] font-medium mt-0.5">Students Guided</p>
+              </div>
+            </div>
+
+            {/* Floating stat badge: bottom-right */}
+            <div className="hidden sm:flex absolute -bottom-5 -right-3 items-center gap-3 bg-white rounded-2xl shadow-card border border-[#F1D3E5] px-4 py-3 animate-float-slow-delayed">
+              <div className="w-10 h-10 rounded-xl bg-[#FBEAF4] flex items-center justify-center text-[#880650] flex-shrink-0">
+                <GraduationCap className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-base font-extrabold text-[#202033] leading-none">3,500+</p>
+                <p className="text-[11px] text-[#626273] font-medium mt-0.5">Partner Universities</p>
+              </div>
+            </div>
+          </Reveal>
 
         </div>
       </div>

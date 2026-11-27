@@ -1,6 +1,7 @@
 import React from 'react';
 import { Eye, Target, HeartHandshake, CheckCircle2, Globe, Shield, UserCheck, Flame } from 'lucide-react';
 import { StripeAccents } from './DecorativeLines';
+import { Reveal } from './Reveal';
 
 export const VisionMissionValues = () => {
   const values = [
@@ -12,11 +13,12 @@ export const VisionMissionValues = () => {
   ];
 
   return (
-    <section id="vision-mission" className="py-20 md:py-28 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+    <section id="vision-mission" className="py-20 md:py-28 bg-white relative overflow-hidden">
+      <div className="brand-blob absolute bottom-0 -left-32 w-96 h-96 rounded-full pointer-events-none" aria-hidden="true" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <Reveal className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-light text-xs font-bold text-brand-primary uppercase tracking-wider mb-3">
             Guiding Philosophy
           </div>
@@ -29,13 +31,13 @@ export const VisionMissionValues = () => {
           <div className="mt-4">
             <StripeAccents className="items-center" />
           </div>
-        </div>
+        </Reveal>
 
         {/* Vision & Mission: 2 Column Hero Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           
           {/* Vision Card */}
-          <div className="relative bg-gradient-to-br from-brand-soft to-white rounded-3xl p-8 sm:p-10 border border-brand-border/80 shadow-card hover:shadow-card-hover transition-all duration-300">
+          <Reveal className="relative bg-gradient-to-br from-brand-soft to-white rounded-3xl p-8 sm:p-10 border border-brand-border/80 shadow-card hover:shadow-card-hover transition-all duration-300">
             <div className="w-14 h-14 rounded-2xl bg-brand-light flex items-center justify-center text-brand-primary mb-6 shadow-2xs">
               <Eye className="w-7 h-7" />
             </div>
@@ -58,10 +60,10 @@ export const VisionMissionValues = () => {
               <div className="h-1.5 w-4 bg-brand-secondary rounded-full" />
               <span className="text-xs font-medium text-brand-text-secondary ml-2">Kasat Group Aspiration</span>
             </div>
-          </div>
+          </Reveal>
 
           {/* Mission Card */}
-          <div className="relative bg-gradient-to-br from-brand-soft to-white rounded-3xl p-8 sm:p-10 border border-brand-border/80 shadow-card hover:shadow-card-hover transition-all duration-300">
+          <Reveal delay={120} className="relative bg-gradient-to-br from-brand-soft to-white rounded-3xl p-8 sm:p-10 border border-brand-border/80 shadow-card hover:shadow-card-hover transition-all duration-300">
             <div className="w-14 h-14 rounded-2xl bg-brand-light flex items-center justify-center text-brand-primary mb-6 shadow-2xs">
               <Target className="w-7 h-7" />
             </div>
@@ -84,12 +86,12 @@ export const VisionMissionValues = () => {
               <div className="h-1.5 w-4 bg-brand-secondary rounded-full" />
               <span className="text-xs font-medium text-brand-text-secondary ml-2">Kasat Group Commitment</span>
             </div>
-          </div>
+          </Reveal>
 
         </div>
 
         {/* Our Values: Distinct 5-Card Block */}
-        <div className="bg-white rounded-3xl p-8 sm:p-10 border border-brand-border/80 shadow-card">
+        <Reveal delay={150} className="bg-white rounded-3xl p-8 sm:p-10 border border-brand-border/80 shadow-card">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-brand-border/60">
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-bold text-brand-primary uppercase tracking-wider mb-1">
@@ -109,9 +111,9 @@ export const VisionMissionValues = () => {
             {values.map((val, idx) => {
               const IconComp = val.icon;
               return (
-                <div 
+                <div
                   key={idx}
-                  className="p-5 rounded-2xl bg-brand-soft/60 hover:bg-brand-light/50 border border-brand-border/50 transition-all duration-200 flex flex-col justify-between"
+                  className="p-5 rounded-2xl bg-brand-soft/60 hover:bg-brand-light/50 border border-brand-border/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-card flex flex-col justify-between"
                 >
                   <div>
                     <div className="w-10 h-10 rounded-xl bg-white border border-brand-border/70 flex items-center justify-center text-brand-primary mb-4 shadow-2xs">
@@ -132,7 +134,7 @@ export const VisionMissionValues = () => {
               );
             })}
           </div>
-        </div>
+        </Reveal>
 
       </div>
     </section>

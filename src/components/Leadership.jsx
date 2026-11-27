@@ -2,14 +2,16 @@ import React from 'react';
 import { User, Award, Quote, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
 import founderPhoto from '../assets/Nandkishor Kasat.jpg';
 import { StripeAccents } from './DecorativeLines';
+import { Reveal } from './Reveal';
 
 export const Leadership = () => {
   return (
-    <section id="leadership" className="py-20 md:py-28 bg-brand-soft/40 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+    <section id="leadership" className="py-20 md:py-28 bg-brand-soft/40 relative overflow-hidden">
+      <div className="brand-blob absolute top-10 -right-32 w-96 h-96 rounded-full pointer-events-none" aria-hidden="true" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <Reveal className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-light text-xs font-bold text-brand-primary uppercase tracking-wider mb-3">
             Group Leadership
           </div>
@@ -22,10 +24,10 @@ export const Leadership = () => {
           <div className="mt-4">
             <StripeAccents className="items-center" />
           </div>
-        </div>
+        </Reveal>
 
         {/* Leadership Profile Card */}
-        <div className="max-w-5xl mx-auto bg-white rounded-3xl p-6 sm:p-10 md:p-12 border border-brand-border/80 shadow-card">
+        <Reveal delay={100} className="max-w-5xl mx-auto bg-white rounded-3xl p-6 sm:p-10 md:p-12 border border-brand-border/80 shadow-card hover:shadow-card-hover transition-shadow duration-500">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
             
             {/* Founder Image with Elegant Framing */}
@@ -117,7 +119,7 @@ export const Leadership = () => {
             </div>
 
           </div>
-        </div>
+        </Reveal>
 
       </div>
     </section>
