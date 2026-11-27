@@ -7,9 +7,15 @@ import kasatMark from '../assets/kasat-mark-circle.png';
  * fills the backdrop edge-to-edge no matter how wide the viewport is
  * (a fixed-count row of <img> tiles would run out on very wide screens).
  *
- * `light` raises opacity slightly and swaps the blend mode for use on
- * dark/mesh backgrounds, since the mark itself is a fixed-color magenta
- * circle rather than an adjustable-color text outline.
+ * `light` brightens the mark for use on dark/mesh backgrounds, since the
+ * mark itself is a fixed-color magenta circle rather than an
+ * adjustable-color text outline.
+ *
+ * Deliberately avoids mix-blend-mode: Chrome has a long-standing bug where
+ * a blended layer incorrectly knocks out the soft box-shadow cast by
+ * nearby cards (e.g. the founder photo in About), punching a visible
+ * blank hole through the pattern. Plain opacity (+ a brightness filter
+ * for the dark-background variant) sidesteps that entirely.
  */
 export const WatermarkField = ({
   className = '',
@@ -31,7 +37,7 @@ export const WatermarkField = ({
           backgroundRepeat: 'repeat',
           backgroundSize: `${tile}px ${tile}px`,
           backgroundPosition: 'center',
-          mixBlendMode: light ? 'screen' : 'multiply',
+          filter: light ? 'brightness(1.7) contrast(0.8)' : 'none',
         }}
       />
     </div>

@@ -20,7 +20,7 @@ export const StatsBanner = () => {
 
       {/* Tiled, slanted "KASAT" watermark, drifting slowly as the page scrolls */}
       <Parallax speed={-0.08} className="absolute inset-0 pointer-events-none">
-        <WatermarkField light rotate={8} size={68} gap={82} opacityClass="opacity-[0.12]" />
+        <WatermarkField light rotate={8} size={68} gap={82} opacityClass="opacity-[0.11]" />
       </Parallax>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
