@@ -206,3 +206,47 @@
   opacity: 1;
 }
 
+
+/* ---------------------------------------------------------------------
+ * Print support
+ *
+ * The default browser/PDF export paginates this page at a fixed sheet
+ * size with no regard for section boundaries, which can land a page
+ * break mid-section and leave a blank stretch where a section's own
+ * padding happened to fall. This block keeps each section intact on
+ * one sheet where possible, stops the fixed navbar/scroll-progress bar
+ * from repeating on every page, freezes scroll-driven animations (a
+ * mid-scroll ticker/parallax frame looks broken on a static page), and
+ * forces background colors/images to actually print.
+ * ------------------------------------------------------------------- */
+@page {
+  margin: 0.4in;
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .fixed {
+    position: static !important;
+  }
+
+  /* A scroll-progress bar and an infinite marquee ticker are meaningless
+     on a static printed sheet, and the ticker would otherwise print
+     frozen mid-scroll, clipped by the page width. */
+  [class*="z-[60]"],
+  .ticker-strip {
+    display: none !important;
+  }
+
+  section,
+  footer {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

@@ -2,7 +2,6 @@ import React from 'react';
 import { GraduationCap, Landmark, Globe, Users, ShieldCheck } from 'lucide-react';
 import { Reveal } from './Reveal';
 import { Counter } from './Counter';
-import { Parallax } from './Parallax';
 import { WatermarkField } from './WatermarkField';
 
 export const StatsBanner = () => {
@@ -18,10 +17,10 @@ export const StatsBanner = () => {
     <section className="relative mesh-dark py-16 sm:py-20 overflow-hidden">
       <div className="grain-overlay" />
 
-      {/* Tiled, slanted "KASAT" watermark, drifting slowly as the page scrolls */}
-      <Parallax speed={-0.08} className="absolute inset-0 pointer-events-none">
-        <WatermarkField light rotate={8} size={68} gap={82} opacityClass="opacity-[0.11]" />
-      </Parallax>
+      {/* Tiled, slanted Kasat mark filling the band. Not parallax-driven: a
+          scroll-linked shift would drag this layer away from the section's
+          own edges and expose a blank seam against the sections above/below. */}
+      <WatermarkField light rotate={8} size={68} gap={82} opacityClass="opacity-[0.11]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <Reveal className="text-center mb-10 sm:mb-14">

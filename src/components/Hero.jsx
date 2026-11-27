@@ -27,7 +27,7 @@ export const Hero = () => {
     <section id="home" className="relative overflow-hidden bg-white">
 
       {/* Deep magenta ticker strip directly under the navbar */}
-      <div className="relative mt-[64px] sm:mt-[72px] bg-[#2B0019] text-white/80 py-2.5 border-b border-white/5">
+      <div className="ticker-strip relative mt-[64px] sm:mt-[72px] bg-[#2B0019] text-white/80 py-2.5 border-b border-white/5">
         <Marquee items={tickerItems} className="text-[11px] sm:text-xs font-bold tracking-[0.2em]" />
       </div>
 
@@ -41,10 +41,10 @@ export const Hero = () => {
           <div className="brand-blob w-80 h-80 rounded-full animate-float-slow-delayed opacity-60" aria-hidden="true" />
         </Parallax>
 
-        {/* Slanted, tiled "KASAT" watermark filling the whole hero backdrop */}
-        <Parallax speed={-0.06} className="absolute inset-0 pointer-events-none">
-          <WatermarkField rotate={-9} size={68} gap={84} opacityClass="opacity-[0.04]" />
-        </Parallax>
+        {/* Slanted, tiled Kasat mark filling the whole hero backdrop. Not
+            parallax-driven: a scroll-linked shift would drag this layer away
+            from the section's own edges and expose a blank seam. */}
+        <WatermarkField rotate={-9} size={68} gap={84} opacityClass="opacity-[0.04]" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center flex flex-col items-center">
 
