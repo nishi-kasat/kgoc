@@ -3,7 +3,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Businesses } from './components/Businesses';
-import { Leadership } from './components/Leadership';
 import { VisionMissionValues } from './components/VisionMissionValues';
 import { StatsBanner } from './components/StatsBanner';
 import { Contact } from './components/Contact';
@@ -19,26 +18,23 @@ function App() {
         {/* 1. Hero Section */}
         <Hero />
 
-        {/* 2. About KGoC & Founder (brief) */}
+        {/* 2. Founder Spotlight — About KGoC + founder's perspective, merged into one strong section */}
         <About />
 
         {/* 3. Our Businesses Section */}
         <Businesses />
 
-        {/* 4. Deep Magenta Stats Ribbon Bar */}
+        {/* 4. Deep Magenta Stats Band */}
         <StatsBanner />
 
-        {/* 5. Leadership — founder's perspective in depth */}
-        <Leadership />
-
-        {/* 6. Vision, Mission & Values — full philosophy grid */}
+        {/* 5. Vision, Mission & Values */}
         <VisionMissionValues />
 
-        {/* 7. Contact Us with Phone, WhatsApp & Clickable QR Code */}
+        {/* 6. Contact Us with Phone, WhatsApp & Clickable QR Code */}
         <Contact />
       </main>
 
-      {/* 8. Footer with Sweeping Multi-Striped Magenta Wave */}
+      {/* 7. Dark Footer with pre-footer CTA */}
       <Footer />
     </div>
   );

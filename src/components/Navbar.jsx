@@ -66,11 +66,14 @@ export const Navbar = () => {
             className="flex items-center gap-2.5 focus:outline-none"
             aria-label="Kasat Group of Companies Home"
           >
-            <img 
-              src={kgocLogo} 
-              alt="Kasat Group of Companies Logo" 
-              className="h-11 sm:h-12 w-auto object-contain"
+            <img
+              src={kgocLogo}
+              alt="Kasat Group of Companies Logo"
+              className="h-10 sm:h-11 w-auto object-contain rounded-full"
             />
+            <span className="hidden lg:block font-serif text-lg font-semibold text-[#2B0019] tracking-tight whitespace-nowrap">
+              Kasat Group of Companies
+            </span>
           </a>
 
           {/* Center Navigation Links: Home | About KGoC | Our Businesses | Contact */}

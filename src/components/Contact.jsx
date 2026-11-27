@@ -31,7 +31,7 @@ export const Contact = () => {
         </Reveal>
 
         {/* Two-Column Contact Card */}
-        <Reveal delay={100} className="max-w-5xl mx-auto bg-gradient-to-br from-[#FFF9FC] via-white to-[#FFF9FC]/40 rounded-3xl p-6 sm:p-10 md:p-12 border border-[#F1D3E5] shadow-card">
+        <Reveal delay={100} className="max-w-5xl mx-auto bg-gradient-to-br from-[#FFF9FC] via-white to-[#FFF9FC]/40 rounded-[2rem] p-6 sm:p-10 md:p-14 shadow-elevated">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
             {/* Left Column: Direct Phone & WhatsApp Access */}
