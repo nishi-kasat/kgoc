@@ -1,13 +1,11 @@
 import React from 'react';
-import { Phone, QrCode, ArrowUpRight, ShieldCheck } from 'lucide-react';
-import whatsappQr from '../assets/whatsapp qr.png';
+import { Phone, ShieldCheck } from 'lucide-react';
 import { StripeAccents } from './DecorativeLines';
 import { Reveal } from './Reveal';
 import { WatermarkField } from './WatermarkField';
 import { AdmissionEnquiryForm } from './AdmissionEnquiryForm';
 
 export const Contact = () => {
-  const whatsappUrl = "https://wa.me/919168718833";
   const phoneNumber = "+91 91687 18833";
   const phoneTel = "tel:+919168718833";
 
@@ -35,94 +33,40 @@ export const Contact = () => {
           </div>
         </Reveal>
 
-        {/* Two-Column Contact Card */}
-        <Reveal delay={100} className="max-w-5xl mx-auto bg-gradient-to-br from-[#FFF9FC] via-white to-[#FFF9FC]/40 rounded-[2rem] p-6 sm:p-10 md:p-14 shadow-elevated">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        {/* Admission Enquiry Form — the one way to reach out via WhatsApp.
+            Answers get assembled into a message and handed off to WhatsApp,
+            so counsellors get structured info instead of a cold "hi", and
+            every enquiry lands in the team's sheet whether or not the
+            visitor actually sends the WhatsApp message afterwards. */}
+        <Reveal delay={100} className="max-w-3xl mx-auto bg-gradient-to-br from-[#FFF9FC] via-white to-[#FFF9FC]/40 rounded-[2rem] p-6 sm:p-10 md:p-14 shadow-elevated">
+          <div className="bg-white rounded-2xl border border-[#F1D3E5] p-6 sm:p-8 shadow-2xs">
+            <AdmissionEnquiryForm />
+          </div>
 
-            {/* Left Column: Admission Enquiry Form — fills out details once,
-                we assemble them into a message and hand off to WhatsApp, so
-                counsellors get structured info instead of a cold "hi". */}
-            <div className="lg:col-span-7 bg-white rounded-2xl border border-[#F1D3E5] p-6 sm:p-8 shadow-2xs">
-              <AdmissionEnquiryForm />
-            </div>
-
-            {/* Right Column: Direct phone + WhatsApp QR, for anyone who'd
-                rather skip the form and just call or scan. */}
-            <div className="lg:col-span-5 flex flex-col gap-6">
-              <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#F1D3E5] shadow-2xs hover:border-[#880650]/40 transition-colors">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#FBEAF4] flex items-center justify-center text-[#880650] flex-shrink-0">
-                    <Phone className="w-6 h-6 sm:w-7 sm:h-7" />
-                  </div>
-                  <div>
-                    <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#880650]">
-                      Call Helpline
-                    </p>
-                    <a
-                      href={phoneTel}
-                      className="text-2xl sm:text-3xl font-extrabold text-[#202033] hover:text-[#880650] transition-colors block mt-0.5"
-                      aria-label={`Call ${phoneNumber}`}
-                    >
-                      {phoneNumber}
-                    </a>
-                  </div>
-                </div>
-                <p className="text-xs sm:text-sm text-[#626273] flex items-center gap-1.5 pt-4 mt-4 border-t border-[#F1D3E5]">
-                  <ShieldCheck className="w-4 h-4 text-[#880650] flex-shrink-0" />
-                  <span>Direct official connection with the Kasat Group of Companies team.</span>
+          {/* Call helpline — a separate channel (a live call), not a way to
+              skip the enquiry form for WhatsApp. */}
+          <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-1">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#FBEAF4] flex items-center justify-center text-[#880650] flex-shrink-0">
+                <Phone className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-wider text-[#880650]">
+                  Prefer to talk it through?
                 </p>
-              </div>
-
-              <div className="w-full bg-white rounded-3xl p-6 sm:p-8 border-2 border-[#F1D3E5] shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden group">
-
-                {/* Decorative stripe in QR card */}
-                <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#880650] to-[#D52A91]" />
-
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FBEAF4] text-xs sm:text-sm font-bold text-[#880650] mb-4">
-                  <QrCode className="w-4 h-4" />
-                  Prefer not to fill the form?
-                </div>
-
-                {/* Clickable QR Code */}
                 <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block relative p-3 bg-white rounded-2xl border border-slate-200 shadow-inner hover:scale-[1.02] transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-[#880650]/50"
-                  title="Click to open WhatsApp chat directly"
+                  href={phoneTel}
+                  className="text-lg font-extrabold text-[#202033] hover:text-[#880650] transition-colors"
+                  aria-label={`Call ${phoneNumber}`}
                 >
-                  <img
-                    src={whatsappQr}
-                    alt="WhatsApp QR Code - Scan to connect with Kasat Group of Companies"
-                    className="w-44 h-44 sm:w-48 sm:h-48 object-contain rounded-xl"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-[#880650]/0 group-hover:bg-[#880650]/5 transition-colors rounded-2xl" />
+                  {phoneNumber}
                 </a>
-
-                {/* QR Instructions */}
-                <div className="mt-5">
-                  <h4 className="text-base sm:text-lg font-bold text-[#202033]">
-                    Scan to chat with us directly
-                  </h4>
-                  <p className="text-xs sm:text-sm text-[#4A4A5A] mt-1.5 max-w-xs leading-relaxed">
-                    Point your smartphone camera or WhatsApp scanner at the QR code to start a direct chat.
-                  </p>
-
-                  {/* Click to open backup link */}
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm font-bold text-[#880650] hover:text-[#68003C] mt-3 underline underline-offset-4"
-                  >
-                    <span>Or click here to open chat</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-
               </div>
             </div>
-
+            <p className="text-xs sm:text-sm text-[#626273] flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-[#880650] flex-shrink-0" />
+              <span>Direct official connection with the Kasat Group of Companies team.</span>
+            </p>
           </div>
         </Reveal>
 

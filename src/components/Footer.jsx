@@ -32,13 +32,11 @@ export const Footer = () => {
             <div className="flex flex-wrap gap-4">
               <Magnetic>
                 <a
-                  href="https://wa.me/919168718833"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contact"
                   className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-base font-semibold text-[#2B0019] bg-white hover:bg-[#FBEAF4] active:scale-[0.98] transition-all shadow-elevated"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>Chat on WhatsApp</span>
+                  <span>Send an Enquiry</span>
                 </a>
               </Magnetic>
               <Magnetic>
@@ -167,13 +165,11 @@ export const Footer = () => {
               </a>
 
               <a
-                href="https://wa.me/919168718833"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-[#2B0019] font-medium text-xs hover:bg-[#FBEAF4] transition-colors"
               >
                 <MessageCircle className="w-3.5 h-3.5" />
-                <span>WhatsApp Desk</span>
+                <span>Send an Enquiry</span>
                 <ArrowUpRight className="w-3 h-3" />
               </a>
             </div>

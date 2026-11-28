@@ -3,31 +3,35 @@
 The enquiry form on the website (Contact section) does two things on submit:
 
 1. Opens WhatsApp with a pre-filled message to your counsellors.
-2. Sends the same details to a Google Sheet, so every enquiry is logged even
-   if the visitor doesn't actually hit "Send" in WhatsApp.
+2. Sends the same details to your Google Sheet, so every enquiry is logged
+   even if the visitor doesn't actually hit "Send" in WhatsApp.
 
-Step 2 needs a small, free Google Apps Script "web app" that sits in front of
-a Google Sheet you own. Nothing here needs a paid plan, and it takes about
-5 minutes to set up. You only need to do this once.
+Step 2 needs a small, free Google Apps Script "web app" bound to this sheet:
 
-## 1. Create the sheet
+**[KGoC enquiry sheet](https://docs.google.com/spreadsheets/d/15dKEqycmFqpDV-njgqawHcszehrZIxoXae0N5-ZqVYI/edit)**
 
-1. Go to [sheets.google.com](https://sheets.google.com) and create a new,
-   blank spreadsheet.
-2. Name it something like **"KGoC Admission Enquiries"**.
-3. In row 1, add these column headers, in this order:
+Nothing here needs a paid plan, and it takes about 5 minutes to set up. You
+only need to do this once.
 
-   `Timestamp | Full Name | Phone | Email | Course of Interest | Preferred Destination | Message`
+## 1. Add the Apps Script to that sheet
 
-## 2. Add the Apps Script
-
-1. In the sheet, go to **Extensions → Apps Script**.
-2. Delete whatever's in the editor and paste this in:
+1. Open the sheet linked above.
+2. Go to **Extensions → Apps Script**.
+3. Delete whatever's in the editor and paste this in:
 
    ```javascript
    function doPost(e) {
      var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
      var data = JSON.parse(e.postData.contents);
+
+     // If the sheet is empty, write the header row first so it's
+     // self-explanatory even if you never typed headers in yourself.
+     if (sheet.getLastRow() === 0) {
+       sheet.appendRow([
+         'Timestamp', 'Full Name', 'Phone', 'Email',
+         'Course of Interest', 'Preferred Destination', 'Message',
+       ]);
+     }
 
      sheet.appendRow([
        data.submittedAt || new Date().toISOString(),
@@ -45,8 +49,11 @@ a Google Sheet you own. Nothing here needs a paid plan, and it takes about
    }
    ```
 
-3. Click the disk icon (or Ctrl/Cmd+S) to save. Give the project a name if asked,
-   e.g. "KGoC Enquiry Logger".
+4. Click the disk icon (or Ctrl/Cmd+S) to save. Give the project a name if
+   asked, e.g. "KGoC Enquiry Logger". Because you opened this from
+   **Extensions → Apps Script** inside the sheet itself, the script is
+   automatically bound to it — `getActiveSpreadsheet()` always means this
+   sheet, no ID to copy in.
 
 ## 3. Deploy it as a web app
 

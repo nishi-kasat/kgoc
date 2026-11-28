@@ -154,9 +154,7 @@ export const Navbar = () => {
           {/* Right Action: Enquire Now Pill Button */}
           <div className="hidden sm:flex items-center">
             <a
-              href="https://wa.me/919168718833"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-[#880650]/40"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
@@ -195,9 +193,7 @@ export const Navbar = () => {
             ))}
             <div className="pt-2">
               <a
-                href="https://wa.me/919168718833"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 onClick={closeMobileMenu}
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full text-base font-semibold text-white bg-[#880650] shadow-sm"
               >
