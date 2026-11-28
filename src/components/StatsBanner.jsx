@@ -20,7 +20,7 @@ export const StatsBanner = () => {
       {/* Tiled, slanted Kasat mark filling the band. Not parallax-driven: a
           scroll-linked shift would drag this layer away from the section's
           own edges and expose a blank seam against the sections above/below. */}
-      <WatermarkField light rotate={8} size={68} gap={82} opacityClass="opacity-[0.11]" />
+      <WatermarkField light size={150} opacityClass="opacity-[0.11]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <Reveal className="text-center mb-10 sm:mb-14">

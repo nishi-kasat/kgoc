@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { ArrowRight, Play, X, Compass, Users, GraduationCap, Sparkle } from 'lucide-react';
 import { Reveal } from './Reveal';
 import { Marquee } from './Marquee';
-import { Parallax } from './Parallax';
 import { Magnetic } from './Magnetic';
 import { WatermarkField } from './WatermarkField';
 
@@ -33,18 +32,22 @@ export const Hero = () => {
 
       <div className="relative pt-16 pb-20 md:pt-24 md:pb-28 lg:pt-28 lg:pb-32">
 
-        {/* Ambient gradient blobs — drift at different speeds on scroll for depth */}
-        <Parallax speed={0.12} className="absolute -top-20 right-0 pointer-events-none">
+        {/* Ambient gradient blob — top-right only. A second blob used to sit
+            flush against the section's bottom-left corner; its blurred glow
+            never fully faded before hitting this section's overflow-hidden
+            edge, so it got hard-clipped into a visible straight-line seam
+            right at the Hero/About boundary. Dropped rather than just
+            repositioned, since any corner near a boundary risks the same
+            clip. Also no longer scroll-linked (Parallax): a drifting glow
+            would just reintroduce the seam at a different scroll position. */}
+        <div className="absolute -top-20 right-0 pointer-events-none">
           <div className="brand-blob w-[32rem] h-[32rem] rounded-full animate-float-slow" aria-hidden="true" />
-        </Parallax>
-        <Parallax speed={-0.08} className="absolute bottom-0 left-0 pointer-events-none">
-          <div className="brand-blob w-80 h-80 rounded-full animate-float-slow-delayed opacity-60" aria-hidden="true" />
-        </Parallax>
+        </div>
 
         {/* Slanted, tiled Kasat mark filling the whole hero backdrop. Not
             parallax-driven: a scroll-linked shift would drag this layer away
             from the section's own edges and expose a blank seam. */}
-        <WatermarkField rotate={-9} size={68} gap={84} opacityClass="opacity-[0.07]" />
+        <WatermarkField size={150} opacityClass="opacity-[0.07]" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center flex flex-col items-center">
 

@@ -12,8 +12,10 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="py-14 sm:py-20 md:py-24 bg-white relative overflow-hidden">
-      <div className="brand-blob absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none" aria-hidden="true" />
-      <WatermarkField rotate={-8} size={72} gap={88} opacityClass="opacity-[0.08]" />
+      {/* Kept clear of the top edge — flush placement hard-clips the blurred
+          glow into a visible seam at the section boundary. */}
+      <div className="brand-blob absolute top-14 right-0 w-80 h-80 rounded-full pointer-events-none" aria-hidden="true" />
+      <WatermarkField size={150} opacityClass="opacity-[0.08]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
         {/* Section Header */}

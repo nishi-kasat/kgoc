@@ -14,8 +14,10 @@ const values = [
 export const VisionMissionValues = () => {
   return (
     <section id="vision-mission" className="py-20 sm:py-24 md:py-32 bg-[#FFF9FC] relative overflow-hidden">
-      <div className="brand-blob absolute bottom-0 -left-32 w-96 h-96 rounded-full pointer-events-none" aria-hidden="true" />
-      <WatermarkField rotate={9} size={72} gap={88} opacityClass="opacity-[0.08]" />
+      {/* Kept clear of the bottom edge — flush placement hard-clips the
+          blurred glow into a visible seam at the section boundary. */}
+      <div className="brand-blob absolute bottom-14 -left-32 w-96 h-96 rounded-full pointer-events-none" aria-hidden="true" />
+      <WatermarkField size={150} opacityClass="opacity-[0.08]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
         <Reveal className="mb-14 sm:mb-20 max-w-2xl">
