@@ -1,8 +1,10 @@
 import React from 'react';
+import { ScrollProgress } from './components/ScrollProgress';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Businesses } from './components/Businesses';
+import { VisionMissionValues } from './components/VisionMissionValues';
 import { StatsBanner } from './components/StatsBanner';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -10,6 +12,8 @@ import { Footer } from './components/Footer';
 function App() {
   return (
     <div className="min-h-screen bg-white text-[#202033] selection:bg-[#FBEAF4] selection:text-[#880650]">
+      <ScrollProgress />
+
       {/* Sticky Header Navigation */}
       <Navbar />
 
@@ -17,20 +21,23 @@ function App() {
         {/* 1. Hero Section */}
         <Hero />
 
-        {/* 2. About KGoC, Founder & Vision/Mission/Values */}
+        {/* 2. Founder Spotlight — About KGoC + founder's perspective, merged into one strong section */}
         <About />
 
-        {/* 3. Our Businesses Section (Placed after About KGoC) */}
+        {/* 3. Our Businesses Section */}
         <Businesses />
 
-        {/* 4. Deep Magenta Stats Ribbon Bar */}
+        {/* 4. Deep Magenta Stats Band */}
         <StatsBanner />
 
-        {/* 5. Contact Us with Phone, WhatsApp & Clickable QR Code */}
+        {/* 5. Vision, Mission & Values */}
+        <VisionMissionValues />
+
+        {/* 6. Contact Us with Phone, WhatsApp & Clickable QR Code */}
         <Contact />
       </main>
 
-      {/* 6. Footer with Sweeping Multi-Striped Magenta Wave */}
+      {/* 7. Dark Footer with pre-footer CTA */}
       <Footer />
     </div>
   );

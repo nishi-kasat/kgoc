@@ -1,127 +1,84 @@
 import React from 'react';
-import { Target, Rocket, Gem } from 'lucide-react';
+import { Quote } from 'lucide-react';
 import founderImg from '../assets/Nandkishor Kasat.jpg';
+import { Reveal } from './Reveal';
+import { Tilt } from './Tilt';
+import { Magnetic } from './Magnetic';
+import { WatermarkField } from './WatermarkField';
 
 export const About = () => {
   return (
-    <section id="about" className="py-14 sm:py-20 md:py-24 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* 3-Column Layout: Founder Photo | About KGoC | Integrated Vision, Mission & Values */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
-          {/* Column 1: Founder Photo */}
-          <div className="md:col-span-4 lg:col-span-3 flex flex-col items-center justify-center">
-            <div className="relative w-52 sm:w-60 h-52 sm:h-60 rounded-2xl overflow-hidden shadow-card border border-[#F1D3E5]/70 bg-slate-50">
+    <section id="about" className="py-20 sm:py-24 md:py-32 bg-white relative overflow-hidden">
+      {/* Ambient decorative blob — kept well clear of the top edge so its
+          blurred glow fully fades before this section's overflow-hidden
+          would hard-clip it into a visible seam at the Hero/About boundary. */}
+      <div className="brand-blob absolute top-10 -left-24 w-72 h-72 rounded-full pointer-events-none" aria-hidden="true" />
+      <WatermarkField size={150} opacityClass="opacity-[0.08]" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+          {/* Column 1: Founder Photo — bleeding, editorial framing (echoes hero image treatment) */}
+          <Reveal className="lg:col-span-5 relative" y={16}>
+            <Tilt className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-elevated" max={5}>
               <img
                 src={founderImg}
                 alt="Er. Nandkishor Kasat - Founder, Kasat Group of Companies"
-                className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-105"
+                className="w-full h-full object-cover object-top"
                 loading="lazy"
               />
-            </div>
-            
-            {/* Founder Designation under photo */}
-            <div className="mt-4 text-center">
-              <h3 className="text-lg sm:text-xl font-extrabold text-[#202033]">
-                Er. Nandkishor Kasat
-              </h3>
-              <p className="text-sm font-semibold text-[#880650] mt-0.5">
-                Founder, Kasat Group of Companies
-              </p>
-            </div>
-          </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2B0019]/70 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="font-serif text-xl sm:text-2xl font-semibold text-white leading-tight">
+                  Er. Nandkishor Kasat
+                </p>
+                <p className="text-xs sm:text-sm font-semibold text-white/75 mt-1 uppercase tracking-wider">
+                  Founder, Kasat Group of Companies
+                </p>
+              </div>
+            </Tilt>
+          </Reveal>
 
-          {/* Column 2: About KGoC Content */}
-          <div className="md:col-span-8 lg:col-span-5 text-left">
-            
-            {/* Category Tag */}
-            <div className="flex items-center gap-2 mb-3">
+          {/* Column 2: Org story + founder's own words, one strong voice instead of two repeated sections */}
+          <Reveal className="lg:col-span-7 text-left" delay={100} y={16}>
+            <div className="flex items-center gap-2 mb-4">
               <div className="w-1.5 h-4 bg-[#880650] rounded-full" />
-              <span className="text-xs sm:text-sm font-extrabold tracking-wider text-[#880650] uppercase">
+              <span className="text-xs sm:text-sm font-extrabold tracking-[0.2em] text-[#880650] uppercase">
                 About Kasat Group of Companies
               </span>
             </div>
 
-            {/* Heading */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#6F0043] tracking-tight leading-tight mb-4">
-              Building Global Careers Through Education
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-[#2B0019] tracking-tight leading-[1.08] mb-6">
+              Building <span className="italic text-[#880650]">global</span> careers through education
             </h2>
 
-            {/* Paragraphs */}
-            <p className="text-base sm:text-lg text-[#333344] leading-relaxed mb-4 font-normal">
-              Founded by <strong>Er. Nandkishor Kasat</strong>, Kasat Group of Companies (KGoC) is a trusted name in education and career guidance, committed to helping students achieve their academic and professional aspirations through expert support, strategic partnerships and continuous guidance.
+            <p className="text-base sm:text-lg text-[#333344] leading-relaxed mb-5 font-normal max-w-2xl">
+              Founded by <strong>Er. Nandkishor Kasat</strong>, Kasat Group of Companies (KGoC) is a trusted name in education and career guidance — operating two dedicated verticals: <strong>Kasat's Emerge India &amp; Overseas</strong> for university admissions and career counseling, and <strong>Kasat Virtual College of Education</strong> for flexible online degrees.
             </p>
 
-            <p className="text-base sm:text-lg text-[#333344] leading-relaxed font-normal">
-              Under his visionary leadership, the group operates two dedicated verticals: <strong>Kasat's Emerge India & Overseas</strong> for university admissions and career counseling, and <strong>Kasat Virtual College of Education</strong> for flexible online degrees.
-            </p>
-
-          </div>
-
-          {/* Column 3: Vision, Mission & Values */}
-          <div className="md:col-span-12 lg:col-span-4 flex flex-col space-y-7 pt-4 lg:pt-0">
-            
-            {/* Our Vision */}
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#FBEAF4] border border-[#F1D3E5] flex items-center justify-center text-[#880650] flex-shrink-0 mt-0.5">
-                <Target className="w-6 h-6 text-[#880650]" />
-              </div>
-              <div className="text-left">
-                <h3 className="text-base sm:text-lg font-bold text-[#202033] mb-1">
-                  Our Vision
-                </h3>
-                <p className="text-sm sm:text-base text-[#4A4A5A] leading-relaxed">
-                  To make quality education accessible to every student and help them build a successful global career.
-                </p>
-              </div>
+            {/* Founder pull-quote, integrated rather than boxed */}
+            <div className="relative pl-6 sm:pl-8 border-l-2 border-[#880650] my-8 max-w-2xl">
+              <Quote className="w-10 h-10 text-[#FBEAF4] absolute -top-3 -left-5 -z-10 rotate-180" aria-hidden="true" />
+              <p className="font-serif italic text-xl sm:text-2xl text-[#2B0019] leading-snug">
+                "Education is the cornerstone of societal progress and personal transformation."
+              </p>
+              <p className="text-sm text-[#626273] mt-3 font-semibold not-italic">
+                — Er. Nandkishor Kasat, Founder
+              </p>
             </div>
 
-            {/* Our Mission */}
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#FBEAF4] border border-[#F1D3E5] flex items-center justify-center text-[#880650] flex-shrink-0 mt-0.5">
-                <Rocket className="w-6 h-6 text-[#880650]" />
-              </div>
-              <div className="text-left">
-                <h3 className="text-base sm:text-lg font-bold text-[#202033] mb-1">
-                  Our Mission
-                </h3>
-                <p className="text-sm sm:text-base text-[#4A4A5A] leading-relaxed">
-                  To provide the right guidance, admissions and continuous support for students to achieve their dreams.
-                </p>
-              </div>
-            </div>
-
-            {/* Our Values */}
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#FBEAF4] border border-[#F1D3E5] flex items-center justify-center text-[#880650] flex-shrink-0 mt-0.5">
-                <Gem className="w-6 h-6 text-[#880650]" />
-              </div>
-              <div className="text-left">
-                <h3 className="text-base sm:text-lg font-bold text-[#202033] mb-1">
-                  Our Values
-                </h3>
-                <p className="text-sm sm:text-base text-[#4A4A5A] leading-relaxed font-medium">
-                  Student Success &nbsp;|&nbsp; Honest Guidance &nbsp;|&nbsp; Transparency &nbsp;|&nbsp; Global Opportunities
-                </p>
-              </div>
-            </div>
-
-          </div>
+            <Magnetic>
+              <a
+                href="#businesses"
+                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-base font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-sm hover:shadow-card group"
+              >
+                <span>Explore Our Businesses</span>
+                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </a>
+            </Magnetic>
+          </Reveal>
 
         </div>
-
-        {/* Explore Our Businesses Button - Shifted to the center of About KGoC section */}
-        <div className="mt-12 sm:mt-16 flex justify-center">
-          <a
-            href="#businesses"
-            className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-base font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-sm hover:shadow-card group"
-          >
-            <span>Explore Our Businesses</span>
-            <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-          </a>
-        </div>
-
       </div>
     </section>
   );

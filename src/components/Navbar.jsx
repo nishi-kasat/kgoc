@@ -21,6 +21,7 @@ export const Navbar = () => {
         { label: 'Kasat Virtual College of Education', href: 'https://kvce.vercel.app/', isExternal: true },
       ]
     },
+    { name: 'Vision & Mission', href: '#vision-mission', id: 'vision-mission' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
@@ -28,7 +29,7 @@ export const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sectionIds = ['home', 'about', 'businesses', 'contact'];
+      const sectionIds = ['home', 'about', 'businesses', 'vision-mission', 'contact'];
       const scrollPos = window.scrollY + 140;
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {
@@ -51,9 +52,9 @@ export const Navbar = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
-        isScrolled 
-          ? 'shadow-sm border-b border-[#F1D3E5]/80 py-2.5' 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md ${
+        isScrolled
+          ? 'shadow-sm border-b border-[#F1D3E5]/80 py-2.5'
           : 'border-b border-[#F1D3E5]/50 py-3.5'
       }`}
     >
@@ -66,11 +67,14 @@ export const Navbar = () => {
             className="flex items-center gap-2.5 focus:outline-none"
             aria-label="Kasat Group of Companies Home"
           >
-            <img 
-              src={kgocLogo} 
-              alt="Kasat Group of Companies Logo" 
-              className="h-11 sm:h-12 w-auto object-contain"
+            <img
+              src={kgocLogo}
+              alt="Kasat Group of Companies Logo"
+              className="h-10 sm:h-11 w-auto object-contain rounded-full"
             />
+            <span className="hidden lg:block font-serif text-lg font-semibold text-[#2B0019] tracking-tight whitespace-nowrap">
+              Kasat Group of Companies
+            </span>
           </a>
 
           {/* Center Navigation Links: Home | About KGoC | Our Businesses | Contact */}
@@ -150,9 +154,7 @@ export const Navbar = () => {
           {/* Right Action: Enquire Now Pill Button */}
           <div className="hidden sm:flex items-center">
             <a
-              href="https://wa.me/919168718833"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-[#880650] hover:bg-[#68003C] active:scale-[0.98] transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-[#880650]/40"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
@@ -191,9 +193,7 @@ export const Navbar = () => {
             ))}
             <div className="pt-2">
               <a
-                href="https://wa.me/919168718833"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 onClick={closeMobileMenu}
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full text-base font-semibold text-white bg-[#880650] shadow-sm"
               >
